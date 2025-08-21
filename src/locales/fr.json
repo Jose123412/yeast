@@ -5,6 +5,7 @@
     "research": "Recherche",
     "publications": "Publications",
     "news": "Actualités",
+    "team": "Équipe",
     "contact": "Contact"
   },
   "hero": {
@@ -169,5 +170,38 @@
   "common": {
     "backToHome": "Retour à l'Accueil",
     "back": "Retour"
+  },
+  "newsPage": {
+    "readMore": "Lire plus",
+    "articles": {
+      "1": {
+        "title": "Nouveau projet de recherche financé par FONDECYT",
+        "excerpt": "Notre laboratoire a reçu un financement pour un projet innovant de trois ans axé sur la caractérisation génomique des levures natives de Nothofagus en Patagonie chilienne."
+      },
+      "2": {
+        "title": "Collaboration internationale avec l'Université de Californie",
+        "excerpt": "Nous établissons une alliance stratégique avec UC Davis pour le développement conjoint de souches de levure spécialisées dans la production de bière artisanale."
+      },
+      "3": {
+        "title": "Publication remarquable dans Nature Microbiology",
+        "excerpt": "Notre étude sur la diversité génétique des levures patagoniennes a été publiée dans l'une des revues scientifiques les plus prestigieuses au monde."
+      },
+      "4": {
+        "title": "Participation au Congrès International de Microbiologie",
+        "excerpt": "L'équipe a présenté ses dernières découvertes au Congrès International de Microbiologie tenu à Barcelone, Espagne."
+      },
+      "5": {
+        "title": "Développement d'une nouvelle souche pour la production de whisky",
+        "excerpt": "Nous avons réussi à développer une souche hybride unique qui améliore significativement le profil aromatique dans la production de whisky patagonien."
+      },
+      "6": {
+        "title": "Reconnaissance pour l'innovation biotechnologique",
+        "excerpt": "Le laboratoire a reçu le Prix National d'Innovation Biotechnologique pour ses contributions au développement d'applications industrielles durables."
+      }
+    }
+  },
+  "team": {
+    "title": "Notre Équipe",
+    "subtitle": "Rencontrez les chercheurs et professionnels qui rendent possible notre recherche de pointe en génétique moléculaire et biotechnologie."
   }
 }

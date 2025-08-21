@@ -49,6 +49,7 @@ const News: React.FC = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -8, scale: 1.02 }}
+              onClick={() => window.location.href = '/news'}
               className="bg-white border border-gray-200/50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer group relative overflow-hidden"
             >
               {/* Gradient overlay on hover */}

@@ -5,6 +5,7 @@
     "research": "Research",
     "publications": "Publications",
     "news": "News",
+    "team": "Team",
     "contact": "Contact"
   },
   "hero": {
@@ -169,5 +170,38 @@
   "common": {
     "backToHome": "Back to Home",
     "back": "Back"
+  },
+  "newsPage": {
+    "readMore": "Read more",
+    "articles": {
+      "1": {
+        "title": "New research project funded by FONDECYT",
+        "excerpt": "Our laboratory has received funding for an innovative three-year project focused on genomic characterization of native Nothofagus yeasts in Chilean Patagonia."
+      },
+      "2": {
+        "title": "International collaboration with University of California",
+        "excerpt": "We establish a strategic alliance with UC Davis for the joint development of yeast strains specialized in craft beer production."
+      },
+      "3": {
+        "title": "Featured publication in Nature Microbiology",
+        "excerpt": "Our study on the genetic diversity of Patagonian yeasts has been published in one of the world's most prestigious scientific journals."
+      },
+      "4": {
+        "title": "Participation in International Microbiology Congress",
+        "excerpt": "The team presented their latest findings at the International Microbiology Congress held in Barcelona, Spain."
+      },
+      "5": {
+        "title": "Development of new strain for whisky production",
+        "excerpt": "We have successfully developed a unique hybrid strain that significantly improves the aromatic profile in Patagonian whisky production."
+      },
+      "6": {
+        "title": "Recognition for biotechnological innovation",
+        "excerpt": "The laboratory received the National Biotechnological Innovation Award for its contributions to the development of sustainable industrial applications."
+      }
+    }
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "Meet the researchers and professionals who make our cutting-edge research in molecular genetics and biotechnology possible."
   }
 }

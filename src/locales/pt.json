@@ -5,6 +5,7 @@
     "research": "Pesquisa",
     "publications": "Publicações",
     "news": "Notícias",
+    "team": "Equipe",
     "contact": "Contato"
   },
   "hero": {
@@ -169,5 +170,38 @@
   "common": {
     "backToHome": "Voltar ao Início",
     "back": "Voltar"
+  },
+  "newsPage": {
+    "readMore": "Ler mais",
+    "articles": {
+      "1": {
+        "title": "Novo projeto de pesquisa financiado pela FONDECYT",
+        "excerpt": "Nosso laboratório recebeu financiamento para um projeto inovador de três anos focado na caracterização genômica de leveduras nativas de Nothofagus na Patagônia chilena."
+      },
+      "2": {
+        "title": "Colaboração internacional com Universidade da Califórnia",
+        "excerpt": "Estabelecemos uma aliança estratégica com UC Davis para o desenvolvimento conjunto de cepas de levedura especializadas na produção de cerveja artesanal."
+      },
+      "3": {
+        "title": "Publicação destacada na Nature Microbiology",
+        "excerpt": "Nosso estudo sobre a diversidade genética de leveduras patagônicas foi publicado em uma das revistas científicas mais prestigiosas do mundo."
+      },
+      "4": {
+        "title": "Participação no Congresso Internacional de Microbiologia",
+        "excerpt": "A equipe apresentou suas últimas descobertas no Congresso Internacional de Microbiologia realizado em Barcelona, Espanha."
+      },
+      "5": {
+        "title": "Desenvolvimento de nova cepa para produção de whisky",
+        "excerpt": "Conseguimos desenvolver uma cepa híbrida única que melhora significativamente o perfil aromático na produção de whisky patagônico."
+      },
+      "6": {
+        "title": "Reconhecimento por inovação biotecnológica",
+        "excerpt": "O laboratório recebeu o Prêmio Nacional de Inovação Biotecnológica por suas contribuições ao desenvolvimento de aplicações industriais sustentáveis."
+      }
+    }
+  },
+  "team": {
+    "title": "Nossa Equipe",
+    "subtitle": "Conheça os pesquisadores e profissionais que tornam possível nossa pesquisa de ponta em genética molecular e biotecnologia."
   }
 }

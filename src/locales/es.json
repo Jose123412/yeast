@@ -5,6 +5,7 @@
     "research": "Investigación",
     "publications": "Publicaciones",
     "news": "Noticias",
+    "team": "Equipo",
     "contact": "Contacto"
   },
   "hero": {
@@ -169,5 +170,38 @@
   "common": {
     "backToHome": "Volver al Inicio",
     "back": "Volver"
+  },
+  "newsPage": {
+    "readMore": "Leer más",
+    "articles": {
+      "1": {
+        "title": "Nuevo proyecto de investigación financiado por FONDECYT",
+        "excerpt": "Nuestro laboratorio ha recibido financiamiento para un innovador proyecto de tres años centrado en la caracterización genómica de levaduras nativas de Nothofagus en la Patagonia chilena."
+      },
+      "2": {
+        "title": "Colaboración internacional con Universidad de California",
+        "excerpt": "Establecemos una alianza estratégica con UC Davis para el desarrollo conjunto de cepas de levadura especializadas en la producción de cerveza artesanal."
+      },
+      "3": {
+        "title": "Publicación destacada en Nature Microbiology",
+        "excerpt": "Nuestro estudio sobre la diversidad genética de levaduras patagónicas ha sido publicado en una de las revistas científicas más prestigiosas del mundo."
+      },
+      "4": {
+        "title": "Participación en Congreso Internacional de Microbiología",
+        "excerpt": "El equipo presentó sus últimos hallazgos en el Congreso Internacional de Microbiología celebrado en Barcelona, España."
+      },
+      "5": {
+        "title": "Desarrollo de nueva cepa para producción de whisky",
+        "excerpt": "Hemos logrado desarrollar una cepa híbrida única que mejora significativamente el perfil aromático en la producción de whisky patagónico."
+      },
+      "6": {
+        "title": "Reconocimiento por innovación biotecnológica",
+        "excerpt": "El laboratorio recibió el Premio Nacional de Innovación Biotecnológica por sus contribuciones al desarrollo de aplicaciones industriales sostenibles."
+      }
+    }
+  },
+  "team": {
+    "title": "Nuestro Equipo",
+    "subtitle": "Conoce a los investigadores y profesionales que hacen posible nuestra investigación de vanguardia en genética molecular y biotecnología."
   }
 }
