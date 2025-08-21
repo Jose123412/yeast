@@ -191,7 +191,7 @@ const Publications: React.FC = () => {
                 </h2>
                 
                 <p className="text-sm text-gray-600 mb-3">
-                  <strong>{publication.journal}</strong> ({publication.year}), Vol. {publication.volume}, pp. {publication.pages}
+                  <strong>{publication.year}</strong>
                 </p>
                 
                 <p className="text-gray-600 mb-4 line-clamp-3 text-sm">
@@ -199,15 +199,7 @@ const Publications: React.FC = () => {
                 </p>
                 
                 <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                  <a
-                    href={`https://doi.org/${publication.doi}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 text-sm font-medium transition-colors duration-200"
-                  >
-                    <ExternalLink size={14} />
-                    <span>DOI</span>
-                  </a>
+                  <div></div>
                   <a
                     href={publication.pdfUrl}
                     target="_blank"
