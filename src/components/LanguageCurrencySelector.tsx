@@ -4,10 +4,10 @@ import { ChevronDown, Globe } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const languages = [
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'pt', name: 'Português', flag: '🇧🇷' },
+  { code: 'es', name: 'Español', flag: 'es' },
+  { code: 'en', name: 'English', flag: 'us' },
+  { code: 'fr', name: 'Français', flag: 'fr' },
+  { code: 'pt', name: 'Português', flag: 'br' },
 ];
 
 const LanguageSelector: React.FC = () => {
@@ -25,7 +25,10 @@ const LanguageSelector: React.FC = () => {
           className="flex items-center space-x-2 px-3 py-2 bg-white border border-gray-200 rounded-lg hover:border-blue-300 transition-colors duration-200"
         >
           <Globe size={16} className="text-gray-500" />
-          <span className="text-sm font-medium">{currentLang?.flag} {currentLang?.code.toUpperCase()}</span>
+          <span className="flex items-center space-x-2">
+            <span className={`fi fi-${currentLang?.flag} w-4 h-3`}></span>
+            <span className="text-sm font-medium">{currentLang?.code.toUpperCase()}</span>
+          </span>
           <ChevronDown size={14} className={`text-gray-400 transition-transform duration-200 ${showLanguageDropdown ? 'rotate-180' : ''}`} />
         </button>
 
@@ -49,7 +52,7 @@ const LanguageSelector: React.FC = () => {
                   }`}
                 >
                   <div className="flex items-center space-x-3">
-                    <span className="text-lg">{lang.flag}</span>
+                    <span className={`fi fi-${lang.flag} w-5 h-4`}></span>
                     <span className="font-medium">{lang.name}</span>
                   </div>
                 </button>
