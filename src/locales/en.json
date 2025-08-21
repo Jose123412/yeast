@@ -32,16 +32,6 @@
   },
   "publications": {
     "title": "Selected Publications",
-    "viewAll": "View all",
-    "page": {
-      "title": "Scientific Publications",
-      "subtitle": "Explore our latest research and discoveries in molecular genetics and applied biotechnology.",
-      "viewPDF": "View PDF",
-      "note": {
-        "title": "Publication Access",
-        "description": "Click on any publication to open the full PDF in a new window. All our publications are available for free download."
-      }
-    },
     "1": {
       "title": "Climate change impact on Patagonian biodiversity",
       "link": "https://example.com/publication1"

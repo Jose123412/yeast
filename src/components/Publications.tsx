@@ -43,7 +43,7 @@ const Publications: React.FC = () => {
           {publications.map((pub, index) => (
             <motion.a
               key={pub}
-              href="/publications"
+              href={t(`publications.${pub}.link`)}
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 50 }}
@@ -67,7 +67,7 @@ const Publications: React.FC = () => {
                     {t(`publications.${pub}.title`)}
                   </h3>
                   <div className="flex items-center text-cyan-300 group-hover:text-cyan-200 transition-colors duration-300">
-                    <span className="text-sm font-semibold">{t('publications.viewAll')}</span>
+                    <span className="text-sm font-semibold">Read more</span>
                     <motion.div
                       whileHover={{ x: 3 }}
                       transition={{ duration: 0.2 }}

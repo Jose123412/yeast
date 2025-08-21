@@ -32,16 +32,6 @@
   },
   "publications": {
     "title": "Publicações Selecionadas",
-    "viewAll": "Ver todas",
-    "page": {
-      "title": "Publicações Científicas",
-      "subtitle": "Explore nossas pesquisas e descobertas mais recentes em genética molecular e biotecnologia aplicada.",
-      "viewPDF": "Ver PDF",
-      "note": {
-        "title": "Acesso às Publicações",
-        "description": "Clique em qualquer publicação para abrir o PDF completo em uma nova janela. Todas as nossas publicações estão disponíveis para download gratuito."
-      }
-    },
     "1": {
       "title": "Impacto das mudanças climáticas na biodiversidade patagônica",
       "link": "https://example.com/publication1"
