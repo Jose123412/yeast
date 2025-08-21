@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Microscope, TreePine, FlaskConical, Dna, Target, Lightbulb } from 'lucide-react';
+import { Microscope, TreePine, FlaskConical, Dna, Target, Lightbulb, ArrowLeft } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const About: React.FC = () => {
@@ -68,6 +68,18 @@ const About: React.FC = () => {
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"></div>
         </motion.div>
+
+        {/* Back Button */}
+        <motion.button
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          onClick={() => window.location.href = '/'}
+          className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium mb-8 transition-colors duration-200"
+        >
+          <ArrowLeft size={20} />
+          <span>{t('common.backToHome')}</span>
+        </motion.button>
 
         {/* Main Content */}
         <div className="max-w-6xl mx-auto">

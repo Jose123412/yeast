@@ -165,5 +165,9 @@
       "title": "Our Vision",
       "description": "Our vision is to become a leading laboratory in applied microbial genomics, transforming Patagonia's unique natural resources into sustainable opportunities for the future."
     }
+  },
+  "common": {
+    "backToHome": "Back to Home",
+    "back": "Back"
   }
 }

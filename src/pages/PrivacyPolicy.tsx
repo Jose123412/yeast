@@ -64,7 +64,7 @@ const PrivacyPolicy: React.FC = () => {
             className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium mb-8 transition-colors duration-200"
           >
             <ArrowLeft size={20} />
-            <span>Volver</span>
+            <span>{t('common.back')}</span>
           </motion.button>
 
           {/* Content */}

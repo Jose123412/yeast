@@ -165,5 +165,9 @@
       "title": "Notre Vision",
       "description": "Notre vision est de devenir un laboratoire leader en génomique microbienne appliquée, transformant les ressources naturelles uniques de la Patagonie en opportunités durables pour l'avenir."
     }
+  },
+  "common": {
+    "backToHome": "Retour à l'Accueil",
+    "back": "Retour"
   }
 }

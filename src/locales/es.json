@@ -165,5 +165,9 @@
       "title": "Nuestra Visión",
       "description": "Nuestra visión es convertirnos en un laboratorio líder en genómica microbiana aplicada, transformando los recursos naturales únicos de la Patagonia en oportunidades sostenibles para el futuro."
     }
+  },
+  "common": {
+    "backToHome": "Volver al Inicio",
+    "back": "Volver"
   }
 }
