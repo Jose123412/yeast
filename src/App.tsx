@@ -9,6 +9,7 @@ import CookiePolicy from './pages/CookiePolicy';
 import About from './pages/About';
 import News from './pages/News';
 import Team from './pages/Team';
+import Publications from './pages/Publications';
 
 const AppContent: React.FC = () => {
   const { isLoading } = useLanguage();
@@ -31,6 +32,7 @@ const AppContent: React.FC = () => {
         <Route path="/about" element={<About />} />
         <Route path="/news" element={<News />} />
         <Route path="/team" element={<Team />} />
+        <Route path="/publications" element={<Publications />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsConditions />} />
         <Route path="/cookies" element={<CookiePolicy />} />
