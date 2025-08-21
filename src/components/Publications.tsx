@@ -60,7 +60,7 @@ const Publications: React.FC = () => {
                     className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl shadow-lg"
                   >
                     <FileText size={26} className="text-white" />
-                  </div>
+                  </motion.div>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300">

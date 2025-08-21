@@ -94,7 +94,7 @@ const LabDimensions: React.FC = () => {
                       className={`inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br ${dimension.gradient} rounded-xl shadow-lg`}
                     >
                       <Icon size={22} className="text-white" />
-                    </div>
+                    </motion.div>
                     <h3 className="text-lg font-bold text-slate-800 group-hover:text-slate-900 transition-colors duration-300">
                       {t(`labdimensions.${dimension.id}.title`)}
                     </h3>

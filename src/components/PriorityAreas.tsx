@@ -69,7 +69,7 @@ const PriorityAreas: React.FC = () => {
                   className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${area.color} rounded-2xl mb-6 shadow-lg relative z-10`}
                 >
                   <Icon size={28} className="text-white" />
-                </div>
+                </motion.div>
                 <h3 className="text-xl font-bold text-slate-800 mb-2 relative z-10 group-hover:text-slate-900 transition-colors duration-300">
                   {t(`priority.${area.id}`)}
                 </h3>
