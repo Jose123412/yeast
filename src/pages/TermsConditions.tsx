@@ -60,11 +60,11 @@ const TermsConditions: React.FC = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            onClick={() => window.history.back()}
+            onClick={() => window.location.href = '/'}
             className="flex items-center space-x-2 text-emerald-600 hover:text-emerald-700 font-medium mb-8 transition-colors duration-200"
           >
             <ArrowLeft size={20} />
-            <span>{t('common.back')}</span>
+            <span>{t('common.backToHome')}</span>
           </motion.button>
 
           {/* Content */}

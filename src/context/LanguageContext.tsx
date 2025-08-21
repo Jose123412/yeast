@@ -16,7 +16,10 @@ interface LanguageProviderProps {
 const translations: { [key: string]: { [key: string]: any } } = {};
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const [currentLanguage, setCurrentLanguage] = useState('es');
+  const [currentLanguage, setCurrentLanguage] = useState(() => {
+    // Load saved language from localStorage or default to 'es'
+    return localStorage.getItem('preferred-language') || 'es';
+  });
   const [isLoading, setIsLoading] = useState(true);
 
   // Load translations on mount
@@ -41,6 +44,8 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 
   const setLanguage = (language: string) => {
     setCurrentLanguage(language);
+    // Save language preference to localStorage
+    localStorage.setItem('preferred-language', language);
   };
 
   const t = (key: string): string => {

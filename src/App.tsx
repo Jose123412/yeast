@@ -2,35 +2,11 @@ import React from 'react';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { CookieProvider } from './context/CookieContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import PriorityAreas from './components/PriorityAreas';
-import Publications from './components/Publications';
-import LabDimensions from './components/LabDimensions';
-import News from './components/News';
-import Footer from './components/Footer';
-import CookieBanner from './components/CookieBanner';
+import HomePage from './pages/HomePage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import CookiePolicy from './pages/CookiePolicy';
 import About from './pages/About';
-
-const HomePage: React.FC = () => {
-  return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <Hero />
-        <PriorityAreas />
-        <Publications />
-        <LabDimensions />
-        <News />
-      </main>
-      <Footer />
-      <CookieBanner />
-    </div>
-  );
-};
 
 const AppContent: React.FC = () => {
   const { isLoading } = useLanguage();
