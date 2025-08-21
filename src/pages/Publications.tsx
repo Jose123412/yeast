@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, Download, ExternalLink, Calendar, Users, ArrowLeft, FileText } from 'lucide-react';
+import { BookOpen, Download, ExternalLink, Calendar, Users, ArrowLeft } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Publications: React.FC = () => {
@@ -18,8 +18,7 @@ const Publications: React.FC = () => {
       doi: '10.1038/s41564-024-01234-5',
       abstract: 'This study presents the first comprehensive genomic analysis of native yeast populations inhabiting the bark of Nothofagus trees in Chilean Patagonia. We identified 47 novel species with unique metabolic capabilities.',
       pdfUrl: '/papers/gonzalez-2024-genomic-diversity.pdf',
-      image: 'https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'Genomics'
+      image: 'https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
       id: 2,
@@ -32,8 +31,7 @@ const Publications: React.FC = () => {
       doi: '10.1128/AEM.02345-24',
       abstract: 'We developed novel hybrid yeast strains from Patagonian isolates that significantly enhance the aromatic profile and fermentation efficiency in craft beer production.',
       pdfUrl: '/papers/fernandez-2024-beer-production.pdf',
-      image: 'https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'Biotechnology'
+      image: 'https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
       id: 3,
@@ -46,8 +44,7 @@ const Publications: React.FC = () => {
       doi: '10.1093/jimb/kuad045',
       abstract: 'Through directed evolution, we created specialized yeast strains adapted to low-temperature fermentation conditions, improving whisky production in Patagonian climates.',
       pdfUrl: '/papers/ramirez-2023-whisky-fermentation.pdf',
-      image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'Evolution'
+      image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
       id: 4,
@@ -60,8 +57,7 @@ const Publications: React.FC = () => {
       doi: '10.1007/s00248-023-02234-1',
       abstract: 'Comprehensive metabolic profiling revealed unique enzymatic pathways in Nothofagus bark yeasts, with potential applications in sustainable biotechnology.',
       pdfUrl: '/papers/silva-2023-metabolic-characterization.pdf',
-      image: 'https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'Microbiology'
+      image: 'https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
       id: 5,
@@ -74,8 +70,7 @@ const Publications: React.FC = () => {
       doi: '10.1016/j.syapm.2023.126234',
       abstract: 'Phylogenetic reconstruction revealed the evolutionary history of Patagonian yeasts, identifying key adaptive mutations for bark colonization.',
       pdfUrl: '/papers/mendoza-2023-phylogenetic-analysis.pdf',
-      image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'Phylogenetics'
+      image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
       id: 6,
@@ -88,8 +83,7 @@ const Publications: React.FC = () => {
       doi: '10.1186/s13068-022-02189-4',
       abstract: 'Development of sustainable fermentation processes using native yeasts for biofuel production, contributing to circular economy principles.',
       pdfUrl: '/papers/gonzalez-2022-sustainable-fermentation.pdf',
-      image: 'https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'Sustainability'
+      image: 'https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
       id: 7,
@@ -102,8 +96,7 @@ const Publications: React.FC = () => {
       doi: '10.1111/1462-2920.16078',
       abstract: 'Investigation of genomic adaptations that allow yeasts to survive and thrive in the harsh conditions of Patagonian winters.',
       pdfUrl: '/papers/fernandez-2022-cold-adaptation.pdf',
-      image: 'https://images.pexels.com/photos/3735748/pexels-photo-3735748.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'Environmental'
+      image: 'https://images.pexels.com/photos/3735748/pexels-photo-3735748.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
       id: 8,
@@ -116,17 +109,9 @@ const Publications: React.FC = () => {
       doi: '10.1021/acs.jnatprod.2c00456',
       abstract: 'Discovery of novel antimicrobial compounds produced by native yeasts, with potential pharmaceutical applications.',
       pdfUrl: '/papers/martinez-2022-antimicrobial-compounds.pdf',
-      image: 'https://images.pexels.com/photos/2280550/pexels-photo-2280550.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'Pharmaceuticals'
+      image: 'https://images.pexels.com/photos/2280550/pexels-photo-2280550.jpeg?auto=compress&cs=tinysrgb&w=800'
     }
   ];
-
-  const categories = ['All', 'Genomics', 'Biotechnology', 'Evolution', 'Microbiology', 'Phylogenetics', 'Sustainability', 'Environmental', 'Pharmaceuticals'];
-  const [selectedCategory, setSelectedCategory] = React.useState('All');
-
-  const filteredPublications = selectedCategory === 'All' 
-    ? publications 
-    : publications.filter(pub => pub.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-16">
@@ -167,36 +152,14 @@ const Publications: React.FC = () => {
           <span>{t('common.backToHome')}</span>
         </motion.button>
 
-        {/* Category Filter */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
-        >
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
-                selectedCategory === category
-                  ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg'
-                  : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </motion.div>
-
         {/* Publications Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {filteredPublications.map((publication, index) => (
+          {publications.map((publication, index) => (
             <motion.article
               key={publication.id}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+              transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
               whileHover={{ y: -8, scale: 1.01 }}
               className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group"
             >
@@ -207,11 +170,6 @@ const Publications: React.FC = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute top-4 right-4">
-                  <span className="px-3 py-1 bg-blue-500 text-white text-xs font-semibold rounded-full">
-                    {publication.category}
-                  </span>
-                </div>
               </div>
               
               <div className="p-6">
@@ -273,18 +231,6 @@ const Publications: React.FC = () => {
             </motion.article>
           ))}
         </div>
-
-        {/* No results message */}
-        {filteredPublications.length === 0 && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center py-12"
-          >
-            <FileText size={48} className="text-gray-400 mx-auto mb-4" />
-            <p className="text-gray-500 text-lg">No publications found in this category.</p>
-          </motion.div>
-        )}
       </div>
     </div>
   );
