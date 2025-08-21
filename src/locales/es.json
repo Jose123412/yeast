@@ -23,12 +23,12 @@
   },
   "priority": {
     "title": "Áreas Científicas Prioritarias",
-    "1": "Biología Molecular y Genética",
-    "2": "Ecología de Ecosistemas",
-    "3": "Cambio Climático",
-    "4": "Biodiversidad y Conservación",
-    "5": "Biotecnología Aplicada",
-    "6": "Ciencias del Suelo"
+    "1": "Genómica evolutiva y adaptación de la levadura",
+    "2": "Ecología microbiana",
+    "3": "Mejoramiento genético",
+    "4": "Aplicaciones biotecnológicas y fermentaciones",
+    "5": "Bioprospección",
+    "6": "Bioinformática"
   },
   "publications": {
     "title": "Publicaciones Destacadas",

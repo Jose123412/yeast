@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Microscope, Leaf, CloudSnow, TreePine, Beaker, Sprout, Atom, Dna } from 'lucide-react';
+import { Microscope, Dna, Leaf, TreePine, Beaker, Search, Database } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const PriorityAreas: React.FC = () => {
@@ -9,10 +9,10 @@ const PriorityAreas: React.FC = () => {
   const areas = [
     { id: '1', icon: Dna, color: 'from-blue-500 to-cyan-500', bgColor: 'bg-blue-500/10', borderColor: 'border-blue-500/20' },
     { id: '2', icon: Leaf, color: 'from-green-500 to-emerald-500', bgColor: 'bg-green-500/10', borderColor: 'border-green-500/20' },
-    { id: '3', icon: CloudSnow, color: 'from-cyan-500 to-blue-500', bgColor: 'bg-cyan-500/10', borderColor: 'border-cyan-500/20' },
-    { id: '4', icon: TreePine, color: 'from-emerald-500 to-teal-500', bgColor: 'bg-emerald-500/10', borderColor: 'border-emerald-500/20' },
-    { id: '5', icon: Beaker, color: 'from-purple-500 to-pink-500', bgColor: 'bg-purple-500/10', borderColor: 'border-purple-500/20' },
-    { id: '6', icon: Atom, color: 'from-orange-500 to-red-500', bgColor: 'bg-orange-500/10', borderColor: 'border-orange-500/20' },
+    { id: '3', icon: TreePine, color: 'from-emerald-500 to-teal-500', bgColor: 'bg-emerald-500/10', borderColor: 'border-emerald-500/20' },
+    { id: '4', icon: Beaker, color: 'from-purple-500 to-pink-500', bgColor: 'bg-purple-500/10', borderColor: 'border-purple-500/20' },
+    { id: '5', icon: Search, color: 'from-orange-500 to-red-500', bgColor: 'bg-orange-500/10', borderColor: 'border-orange-500/20' },
+    { id: '6', icon: Database, color: 'from-cyan-500 to-blue-500', bgColor: 'bg-cyan-500/10', borderColor: 'border-cyan-500/20' },
   ];
 
   return (

@@ -23,12 +23,12 @@
   },
   "priority": {
     "title": "Priority Scientific Areas",
-    "1": "Molecular Biology and Genetics",
-    "2": "Ecosystem Ecology",
-    "3": "Climate Change",
-    "4": "Biodiversity and Conservation",
-    "5": "Applied Biotechnology",
-    "6": "Soil Sciences"
+    "1": "Evolutionary genomics and yeast adaptation",
+    "2": "Microbial ecology",
+    "3": "Genetic improvement",
+    "4": "Biotechnological applications and fermentations",
+    "5": "Bioprospecting",
+    "6": "Bioinformatics"
   },
   "publications": {
     "title": "Selected Publications",

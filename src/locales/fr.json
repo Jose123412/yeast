@@ -23,12 +23,12 @@
   },
   "priority": {
     "title": "Domaines Scientifiques Prioritaires",
-    "1": "Biologie Moléculaire et Génétique",
-    "2": "Écologie des Écosystèmes",
-    "3": "Changement Climatique",
-    "4": "Biodiversité et Conservation",
-    "5": "Biotechnologie Appliquée",
-    "6": "Sciences du Sol"
+    "1": "Génomique évolutive et adaptation des levures",
+    "2": "Écologie microbienne",
+    "3": "Amélioration génétique",
+    "4": "Applications biotechnologiques et fermentations",
+    "5": "Bioprospection",
+    "6": "Bioinformatique"
   },
   "publications": {
     "title": "Publications Sélectionnées",
