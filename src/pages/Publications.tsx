@@ -162,24 +162,27 @@ const Publications: React.FC = () => {
               whileHover={{ y: -8, scale: 1.01 }}
               className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group"
             >
-              <div className="aspect-w-16 aspect-h-9 h-48 overflow-hidden relative">
-                <img
-                  src={publication.image}
-                  alt={publication.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              </div>
+              <a
+                href={publication.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <div className="aspect-w-16 aspect-h-9 h-48 overflow-hidden relative">
+                  <img
+                    src={publication.image}
+                    alt={publication.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
+              </a>
               
               <div className="p-6">
                 <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
                   <div className="flex items-center space-x-2">
                     <Calendar size={14} />
                     <span>{publication.year}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Users size={14} />
-                    <span>{publication.authors.length} authors</span>
                   </div>
                 </div>
                 
@@ -194,17 +197,6 @@ const Publications: React.FC = () => {
                 <p className="text-gray-600 mb-4 line-clamp-3 text-sm">
                   {publication.abstract}
                 </p>
-                
-                <div className="mb-4">
-                  <p className="text-xs text-gray-500 mb-2">Authors:</p>
-                  <div className="flex flex-wrap gap-1">
-                    {publication.authors.map((author, idx) => (
-                      <span key={idx} className="px-2 py-1 bg-gray-100 text-xs rounded-full">
-                        {author}
-                      </span>
-                    ))}
-                  </div>
-                </div>
                 
                 <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                   <a
