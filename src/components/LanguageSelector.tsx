@@ -25,7 +25,8 @@
 +            <span className={`fi fi-${currentLang?.flagCode} w-5 h-5 rounded-full shadow-sm`}></span>
 +            <span className="text-sm font-medium">{currentLang?.code.toUpperCase()}</span>
 +          </div>
-           <ChevronDown size={14} className={`text-gray-400 transition-transform duration-200 ${showLanguageDropdown ? 'rotate-180' : ''}`} />
+           <ChevronDown size={14} className={`text-gray-400 transition-transform duration-200 ${s
+}howLanguageDropdown ? 'rotate-180' : ''}`} />
          </button>
 
 @@ .. @@
