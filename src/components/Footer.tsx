@@ -22,6 +22,7 @@ const Footer: React.FC = () => {
   const legalLinks = [
     { name: t('footer.legal.privacy'), href: '/privacy' },
     { name: t('footer.legal.terms'), href: '/terms' },
+    { name: 'Cookies', href: '/cookies' },
   ];
 
   return (
@@ -143,7 +144,7 @@ const Footer: React.FC = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © 2025 Lab Patagonia. All rights reserved.
+              © 2025 moleculargeneticslab.cl. All rights reserved.
             </p>
             <div className="flex space-x-6">
               {legalLinks.map((link) => (
