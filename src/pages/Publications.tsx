@@ -9,8 +9,7 @@ const Publications: React.FC = () => {
   const publications = [
     {
       id: 1,
-      title: 'Genomic Diversity of Native Yeasts from Nothofagus Forests in Chilean Patagonia',
-      authors: ['Dr. María González', 'Dr. Carlos Mendoza', 'Dr. Ana Silva'],
+      title: 'Co-culture dynamics between Lachancea cidri and Saccharomyces cerevisiae impact fermentative aroma profile',
       journal: 'Nature Microbiology',
       year: 2024,
       volume: '9',
