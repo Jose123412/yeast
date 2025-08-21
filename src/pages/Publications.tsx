@@ -12,9 +12,6 @@ const Publications: React.FC = () => {
       title: 'Co-culture dynamics between Lachancea cidri and Saccharomyces cerevisiae impact fermentative aroma profile',
       journal: 'Nature Microbiology',
       year: 2025,
-      volume: '9',
-      pages: '1234-1245',
-      doi: '10.1038/s41564-024-01234-5',
       abstract: 'This study presents the first comprehensive genomic analysis of native yeast populations inhabiting the bark of Nothofagus trees in Chilean Patagonia. We identified 47 novel species with unique metabolic capabilities.',
       pdfUrl: '/papers/gonzalez-2024-genomic-diversity.pdf',
       image: 'https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=800'
