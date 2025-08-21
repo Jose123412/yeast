@@ -12,6 +12,7 @@ import Team from './pages/Team';
 import Publications from './pages/Publications';
 import Congresses from './pages/Congresses';
 import Outreach from './pages/Outreach';
+import Dissemination from './pages/Dissemination';
 
 const AppContent: React.FC = () => {
   const { isLoading } = useLanguage();
@@ -37,6 +38,7 @@ const AppContent: React.FC = () => {
         <Route path="/publications" element={<Publications />} />
         <Route path="/congresses" element={<Congresses />} />
         <Route path="/outreach" element={<Outreach />} />
+        <Route path="/dissemination" element={<Dissemination />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsConditions />} />
         <Route path="/cookies" element={<CookiePolicy />} />
