@@ -88,7 +88,7 @@ const PrivacyPolicy: React.FC = () => {
           </div>
         </motion.div>
       </div>
-    "contactText": "Si tienes preguntas sobre esta política, puedes contactarnos en info@moleculargeneticslab.cl"
+    </div>
   );
 };
 
