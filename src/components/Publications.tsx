@@ -80,6 +80,25 @@ const Publications: React.FC = () => {
             </motion.a>
           ))}
         </div>
+
+        {/* View All Publications Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <motion.a
+            href="/publications"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
+          >
+            <span>View All Publications</span>
+            <ExternalLink size={20} />
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );
