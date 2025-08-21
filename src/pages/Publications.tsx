@@ -10,7 +10,6 @@ const Publications: React.FC = () => {
     {
       id: 1,
       title: 'Co-culture dynamics between Lachancea cidri and Saccharomyces cerevisiae impact fermentative aroma profile',
-      journal: 'Nature Microbiology',
       year: 2025,
       abstract: 'This study presents the first comprehensive genomic analysis of native yeast populations inhabiting the bark of Nothofagus trees in Chilean Patagonia. We identified 47 novel species with unique metabolic capabilities.',
       pdfUrl: '/papers/gonzalez-2024-genomic-diversity.pdf',
@@ -19,12 +18,7 @@ const Publications: React.FC = () => {
     {
       id: 2,
       title: 'Biotechnological Applications of Patagonian Yeasts in Craft Beer Production',
-      authors: ['Dr. Roberto Fernández', 'Dr. Laura Martínez', 'MSc. Andrés Torres'],
-      journal: 'Applied and Environmental Microbiology',
       year: 2024,
-      volume: '90',
-      pages: '567-578',
-      doi: '10.1128/AEM.02345-24',
       abstract: 'We developed novel hybrid yeast strains from Patagonian isolates that significantly enhance the aromatic profile and fermentation efficiency in craft beer production.',
       pdfUrl: '/papers/fernandez-2024-beer-production.pdf',
       image: 'https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800'
@@ -32,12 +26,7 @@ const Publications: React.FC = () => {
     {
       id: 3,
       title: 'Experimental Evolution of Cold-Adapted Yeasts for Whisky Fermentation',
-      authors: ['Dr. Diego Ramírez', 'Dra. Patricia López', 'Est. Matías Sánchez'],
-      journal: 'Journal of Industrial Microbiology & Biotechnology',
       year: 2023,
-      volume: '50',
-      pages: '789-801',
-      doi: '10.1093/jimb/kuad045',
       abstract: 'Through directed evolution, we created specialized yeast strains adapted to low-temperature fermentation conditions, improving whisky production in Patagonian climates.',
       pdfUrl: '/papers/ramirez-2023-whisky-fermentation.pdf',
       image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800'
@@ -45,12 +34,7 @@ const Publications: React.FC = () => {
     {
       id: 4,
       title: 'Metabolic Characterization of Nothofagus-Associated Yeast Communities',
-      authors: ['Dr. Ana Silva', 'MSc. Valentina Herrera', 'Lic. Joaquín Castro'],
-      journal: 'Microbial Ecology',
       year: 2023,
-      volume: '86',
-      pages: '1456-1470',
-      doi: '10.1007/s00248-023-02234-1',
       abstract: 'Comprehensive metabolic profiling revealed unique enzymatic pathways in Nothofagus bark yeasts, with potential applications in sustainable biotechnology.',
       pdfUrl: '/papers/silva-2023-metabolic-characterization.pdf',
       image: 'https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800'
@@ -58,12 +42,7 @@ const Publications: React.FC = () => {
     {
       id: 5,
       title: 'Phylogenetic Analysis of Endemic Yeasts in Temperate Rainforests',
-      authors: ['Dr. Carlos Mendoza', 'Ing. Sebastián Morales', 'Est. Isidora Muñoz'],
-      journal: 'Systematic and Applied Microbiology',
       year: 2023,
-      volume: '46',
-      pages: '234-248',
-      doi: '10.1016/j.syapm.2023.126234',
       abstract: 'Phylogenetic reconstruction revealed the evolutionary history of Patagonian yeasts, identifying key adaptive mutations for bark colonization.',
       pdfUrl: '/papers/mendoza-2023-phylogenetic-analysis.pdf',
       image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800'
@@ -71,12 +50,7 @@ const Publications: React.FC = () => {
     {
       id: 6,
       title: 'Sustainable Fermentation Technologies Using Native Patagonian Microorganisms',
-      authors: ['Dr. María González', 'MSc. Camila Vega', 'Lic. Francisca Rojas'],
-      journal: 'Biotechnology for Biofuels and Bioproducts',
       year: 2022,
-      volume: '15',
-      pages: '89-102',
-      doi: '10.1186/s13068-022-02189-4',
       abstract: 'Development of sustainable fermentation processes using native yeasts for biofuel production, contributing to circular economy principles.',
       pdfUrl: '/papers/gonzalez-2022-sustainable-fermentation.pdf',
       image: 'https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800'
@@ -84,12 +58,7 @@ const Publications: React.FC = () => {
     {
       id: 7,
       title: 'Genomic Adaptation Mechanisms in Extreme Cold Environments',
-      authors: ['Dr. Roberto Fernández', 'Est. Nicolás Vargas', 'Est. Sofía Espinoza'],
-      journal: 'Environmental Microbiology',
       year: 2022,
-      volume: '24',
-      pages: '3456-3471',
-      doi: '10.1111/1462-2920.16078',
       abstract: 'Investigation of genomic adaptations that allow yeasts to survive and thrive in the harsh conditions of Patagonian winters.',
       pdfUrl: '/papers/fernandez-2022-cold-adaptation.pdf',
       image: 'https://images.pexels.com/photos/3735748/pexels-photo-3735748.jpeg?auto=compress&cs=tinysrgb&w=800'
@@ -97,12 +66,7 @@ const Publications: React.FC = () => {
     {
       id: 8,
       title: 'Bioprospecting of Antimicrobial Compounds from Patagonian Yeasts',
-      authors: ['Dr. Laura Martínez', 'Dra. Patricia López', 'MSc. Andrés Torres'],
-      journal: 'Journal of Natural Products',
       year: 2022,
-      volume: '85',
-      pages: '1789-1798',
-      doi: '10.1021/acs.jnatprod.2c00456',
       abstract: 'Discovery of novel antimicrobial compounds produced by native yeasts, with potential pharmaceutical applications.',
       pdfUrl: '/papers/martinez-2022-antimicrobial-compounds.pdf',
       image: 'https://images.pexels.com/photos/2280550/pexels-photo-2280550.jpeg?auto=compress&cs=tinysrgb&w=800'
