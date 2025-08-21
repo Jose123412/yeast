@@ -151,5 +151,19 @@
     "liabilityText": "Molecular Genetics Lab ne sera pas responsable des dommages directs, indirects ou consécutifs pouvant résulter de l'utilisation de ce site web.",
     "modifications": "Modifications",
     "modificationsText": "Nous nous réservons le droit de modifier ces conditions à tout moment. Les changements prendront effet immédiatement après publication."
+  },
+  "about": {
+    "title": "À Propos du Laboratoire",
+    "mission": {
+      "title": "Notre Mission",
+      "description": "Dans notre laboratoire, nous intégrons la génomique, la biotechnologie et l'évolution expérimentale pour explorer et exploiter la diversité génétique des levures uniques natives des forêts tempérées de la Patagonie chilienne. Nous nous spécialisons dans l'isolement et la caractérisation de levures qui prospèrent sur l'écorce des arbres Nothofagus, débloquant leur potentiel pour des applications biotechnologiques innovantes. De la génération ciblée de souches hybrides adaptées aux fermentations spécialisées à la création de produits nouveaux—comme des levures personnalisées pour le brassage de bière et la production de whisky—nous relions la recherche fondamentale aux solutions pratiques bénéficiant à l'industrie et à la société."
+    },
+    "expertise": {
+      "title": "Nos Domaines d'Expertise"
+    },
+    "vision": {
+      "title": "Notre Vision",
+      "description": "Notre vision est de devenir un laboratoire leader en génomique microbienne appliquée, transformant les ressources naturelles uniques de la Patagonie en opportunités durables pour l'avenir."
+    }
   }
 }

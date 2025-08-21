@@ -151,5 +151,19 @@
     "liabilityText": "Molecular Genetics Lab shall not be liable for any direct, indirect, or consequential damages that may arise from the use of this website.",
     "modifications": "Modifications",
     "modificationsText": "We reserve the right to modify these terms at any time. Changes will take effect immediately upon posting."
+  },
+  "about": {
+    "title": "About the Laboratory",
+    "mission": {
+      "title": "Our Mission",
+      "description": "In our laboratory, we integrate genomics, biotechnology, and experimental evolution to explore and harness the genetic diversity of unique yeasts native to the temperate forests of Chilean Patagonia. We specialize in isolating and characterizing yeasts that thrive on the bark of Nothofagus trees, unlocking their potential for innovative biotechnological applications. From the targeted generation of hybrid strains adapted for specialized fermentations to the creation of novel products—such as customized yeasts for beer brewing and whisky production—we bridge fundamental research with practical solutions benefiting industry and society."
+    },
+    "expertise": {
+      "title": "Our Areas of Expertise"
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "Our vision is to become a leading laboratory in applied microbial genomics, transforming Patagonia's unique natural resources into sustainable opportunities for the future."
+    }
   }
 }

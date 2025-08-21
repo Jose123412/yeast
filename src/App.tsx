@@ -13,6 +13,7 @@ import CookieBanner from './components/CookieBanner';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import CookiePolicy from './pages/CookiePolicy';
+import About from './pages/About';
 
 const HomePage: React.FC = () => {
   return (
@@ -49,6 +50,7 @@ const AppContent: React.FC = () => {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<About />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsConditions />} />
         <Route path="/cookies" element={<CookiePolicy />} />

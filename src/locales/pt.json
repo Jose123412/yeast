@@ -151,5 +151,19 @@
     "liabilityText": "A Molecular Genetics Lab não será responsável por quaisquer danos diretos, indiretos ou consequentes que possam surgir do uso deste site.",
     "modifications": "Modificações",
     "modificationsText": "Reservamo-nos o direito de modificar estes termos a qualquer momento. As alterações entrarão em vigor imediatamente após a publicação."
+  },
+  "about": {
+    "title": "Sobre o Laboratório",
+    "mission": {
+      "title": "Nossa Missão",
+      "description": "Em nosso laboratório, integramos genômica, biotecnologia e evolução experimental para explorar e aproveitar a diversidade genética de leveduras únicas nativas das florestas temperadas da Patagônia chilena. Especializamo-nos no isolamento e caracterização de leveduras que prosperam na casca de árvores Nothofagus, desbloqueando seu potencial para aplicações biotecnológicas inovadoras. Desde a geração direcionada de cepas híbridas adaptadas para fermentações especializadas até a criação de produtos novos—como leveduras personalizadas para fabricação de cerveja e produção de whisky—conectamos pesquisa fundamental com soluções práticas que beneficiam a indústria e a sociedade."
+    },
+    "expertise": {
+      "title": "Nossas Áreas de Especialização"
+    },
+    "vision": {
+      "title": "Nossa Visão",
+      "description": "Nossa visão é nos tornarmos um laboratório líder em genômica microbiana aplicada, transformando os recursos naturais únicos da Patagônia em oportunidades sustentáveis para o futuro."
+    }
   }
 }

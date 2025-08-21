@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "Inicio",
-    "about": "Acerca",
+    "about": "Acerca de",
     "research": "Investigación",
     "publications": "Publicaciones",
     "news": "Noticias",
@@ -151,5 +151,19 @@
     "liabilityText": "Lab Patagonia no será responsable de ningún daño directo, indirecto o consecuente que pueda surgir del uso de este sitio web.",
     "modifications": "Modificaciones",
     "modificationsText": "Nos reservamos el derecho de modificar estos términos en cualquier momento. Los cambios entrarán en vigor inmediatamente después de su publicación."
+  },
+  "about": {
+    "title": "Acerca del Laboratorio",
+    "mission": {
+      "title": "Nuestra Misión",
+      "description": "En nuestro laboratorio, integramos genómica, biotecnología y evolución experimental para explorar y aprovechar la diversidad genética de levaduras únicas nativas de los bosques templados de la Patagonia chilena. Nos especializamos en aislar y caracterizar levaduras que prosperan en la corteza de árboles Nothofagus, desbloqueando su potencial para aplicaciones biotecnológicas innovadoras. Desde la generación dirigida de cepas híbridas adaptadas para fermentaciones especializadas hasta la creación de productos novedosos—como levaduras personalizadas para la elaboración de cerveza y producción de whisky—conectamos la investigación fundamental con soluciones prácticas que benefician a la industria y la sociedad."
+    },
+    "expertise": {
+      "title": "Nuestras Áreas de Especialización"
+    },
+    "vision": {
+      "title": "Nuestra Visión",
+      "description": "Nuestra visión es convertirnos en un laboratorio líder en genómica microbiana aplicada, transformando los recursos naturales únicos de la Patagonia en oportunidades sostenibles para el futuro."
+    }
   }
 }
