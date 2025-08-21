@@ -1,5 +1,7 @@
 import React from 'react';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
+import { CookieProvider } from './context/CookieContext';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import PriorityAreas from './components/PriorityAreas';
@@ -7,6 +9,27 @@ import Publications from './components/Publications';
 import LabDimensions from './components/LabDimensions';
 import News from './components/News';
 import Footer from './components/Footer';
+import CookieBanner from './components/CookieBanner';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsConditions from './pages/TermsConditions';
+import CookiePolicy from './pages/CookiePolicy';
+
+const HomePage: React.FC = () => {
+  return (
+    <div className="min-h-screen">
+      <Header />
+      <main>
+        <Hero />
+        <PriorityAreas />
+        <Publications />
+        <LabDimensions />
+        <News />
+      </main>
+      <Footer />
+      <CookieBanner />
+    </div>
+  );
+};
 
 const AppContent: React.FC = () => {
   const { isLoading } = useLanguage();
@@ -23,24 +46,23 @@ const AppContent: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <Hero />
-        <PriorityAreas />
-        <Publications />
-        <LabDimensions />
-        <News />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsConditions />} />
+        <Route path="/cookies" element={<CookiePolicy />} />
+      </Routes>
+    </Router>
   );
 };
 
 function App() {
   return (
     <LanguageProvider>
-      <AppContent />
+      <CookieProvider>
+        <AppContent />
+      </CookieProvider>
     </LanguageProvider>
   );
 }

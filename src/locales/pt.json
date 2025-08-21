@@ -7,6 +7,14 @@
     "news": "Notícias",
     "contact": "Contato"
   },
+  "hero": {
+    "title": "Laboratório de Pesquisa Patagônico",
+    "subtitle": "Ciência de ponta no coração da Patagônia",
+    "cta": {
+      "primary": "Explorar Pesquisa",
+      "secondary": "Ver Publicações"
+    }
+  },
   "description": {
     "title": "Laboratório de Pesquisa Patagônico",
     "subtitle": "Ciência de ponta no coração da Patagônia",
@@ -90,5 +98,58 @@
       "email": "info@labpatagonia.com",
       "phone": "+54 11 1234-5678"
     }
+  },
+  "cookies": {
+    "banner": {
+      "title": "Uso de Cookies",
+      "message": "Utilizamos cookies para melhorar sua experiência em nosso site. Você pode aceitar todos os cookies ou personalizar suas preferências.",
+      "accept": "Aceitar todos",
+      "reject": "Rejeitar",
+      "readMore": "Ler mais"
+    },
+    "page": {
+      "title": "Política de Cookies",
+      "description": "Informações sobre o uso de cookies em nosso site",
+      "whatAreCookies": "O que são cookies?",
+      "whatAreCookiesText": "Cookies são pequenos arquivos de texto armazenados em seu dispositivo quando você visita um site. Eles nos ajudam a lembrar suas preferências e melhorar sua experiência de navegação.",
+      "typesOfCookies": "Tipos de cookies que utilizamos",
+      "essential": "Cookies essenciais",
+      "essentialText": "Necessários para o funcionamento básico do site.",
+      "analytics": "Cookies de análise",
+      "analyticsText": "Nos ajudam a entender como os usuários interagem com nosso site.",
+      "preferences": "Cookies de preferências",
+      "preferencesText": "Lembram suas configurações e preferências.",
+      "resetCookies": "Redefinir Preferências de Cookies",
+      "resetText": "Você pode redefinir suas preferências de cookies a qualquer momento clicando no botão abaixo.",
+      "resetButton": "Redefinir Cookies"
+    }
+  },
+  "privacy": {
+    "title": "Política de Privacidade",
+    "lastUpdated": "Última atualização: 15 de janeiro de 2025",
+    "introduction": "Introdução",
+    "introText": "Na Lab Patagonia, respeitamos sua privacidade e nos comprometemos a proteger seus dados pessoais. Esta política explica como coletamos, usamos e protegemos suas informações.",
+    "dataCollection": "Coleta de Dados",
+    "dataCollectionText": "Coletamos informações que você nos fornece diretamente, como quando você entra em contato conosco ou se inscreve em nossa newsletter.",
+    "dataUse": "Uso de Dados",
+    "dataUseText": "Usamos seus dados para melhorar nossos serviços, nos comunicar com você e cumprir nossas obrigações legais.",
+    "dataProtection": "Proteção de Dados",
+    "dataProtectionText": "Implementamos medidas de segurança técnicas e organizacionais para proteger seus dados pessoais.",
+    "contact": "Contato",
+    "contactText": "Se você tiver dúvidas sobre esta política, pode nos contatar em info@labpatagonia.com"
+  },
+  "terms": {
+    "title": "Termos e Condições",
+    "lastUpdated": "Última atualização: 15 de janeiro de 2025",
+    "acceptance": "Aceitação dos Termos",
+    "acceptanceText": "Ao acessar e usar este site, você concorda em estar sujeito a estes termos e condições.",
+    "useOfSite": "Uso do Site",
+    "useOfSiteText": "Este site é fornecido apenas para fins informativos e educacionais relacionados às nossas atividades de pesquisa.",
+    "intellectualProperty": "Propriedade Intelectual",
+    "intellectualPropertyText": "Todo o conteúdo deste site, incluindo textos, imagens e designs, está protegido por direitos autorais.",
+    "liability": "Limitação de Responsabilidade",
+    "liabilityText": "A Lab Patagonia não será responsável por quaisquer danos diretos, indiretos ou consequentes que possam surgir do uso deste site.",
+    "modifications": "Modificações",
+    "modificationsText": "Reservamo-nos o direito de modificar estes termos a qualquer momento. As alterações entrarão em vigor imediatamente após a publicação."
   }
 }

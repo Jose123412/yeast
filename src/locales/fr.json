@@ -7,6 +7,14 @@
     "news": "Actualités",
     "contact": "Contact"
   },
+  "hero": {
+    "title": "Laboratoire de Recherche Patagonique",
+    "subtitle": "Science de pointe au cœur de la Patagonie",
+    "cta": {
+      "primary": "Explorer la Recherche",
+      "secondary": "Voir les Publications"
+    }
+  },
   "description": {
     "title": "Laboratoire de Recherche Patagonique",
     "subtitle": "Science de pointe au cœur de la Patagonie",
@@ -90,5 +98,58 @@
       "email": "info@labpatagonia.com",
       "phone": "+54 11 1234-5678"
     }
+  },
+  "cookies": {
+    "banner": {
+      "title": "Utilisation des Cookies",
+      "message": "Nous utilisons des cookies pour améliorer votre expérience sur notre site web. Vous pouvez accepter tous les cookies ou personnaliser vos préférences.",
+      "accept": "Accepter tout",
+      "reject": "Rejeter",
+      "readMore": "En savoir plus"
+    },
+    "page": {
+      "title": "Politique des Cookies",
+      "description": "Informations sur l'utilisation des cookies sur notre site web",
+      "whatAreCookies": "Que sont les cookies ?",
+      "whatAreCookiesText": "Les cookies sont de petits fichiers texte stockés sur votre appareil lorsque vous visitez un site web. Ils nous aident à mémoriser vos préférences et à améliorer votre expérience de navigation.",
+      "typesOfCookies": "Types de cookies que nous utilisons",
+      "essential": "Cookies essentiels",
+      "essentialText": "Nécessaires au fonctionnement de base du site web.",
+      "analytics": "Cookies d'analyse",
+      "analyticsText": "Nous aident à comprendre comment les utilisateurs interagissent avec notre site.",
+      "preferences": "Cookies de préférences",
+      "preferencesText": "Mémorisent vos paramètres et préférences.",
+      "resetCookies": "Réinitialiser les Préférences de Cookies",
+      "resetText": "Vous pouvez réinitialiser vos préférences de cookies à tout moment en cliquant sur le bouton ci-dessous.",
+      "resetButton": "Réinitialiser les Cookies"
+    }
+  },
+  "privacy": {
+    "title": "Politique de Confidentialité",
+    "lastUpdated": "Dernière mise à jour : 15 janvier 2025",
+    "introduction": "Introduction",
+    "introText": "Chez Lab Patagonia, nous respectons votre vie privée et nous nous engageons à protéger vos données personnelles. Cette politique explique comment nous collectons, utilisons et protégeons vos informations.",
+    "dataCollection": "Collecte de Données",
+    "dataCollectionText": "Nous collectons les informations que vous nous fournissez directement, comme lorsque vous nous contactez ou vous abonnez à notre newsletter.",
+    "dataUse": "Utilisation des Données",
+    "dataUseText": "Nous utilisons vos données pour améliorer nos services, communiquer avec vous et remplir nos obligations légales.",
+    "dataProtection": "Protection des Données",
+    "dataProtectionText": "Nous mettons en place des mesures de sécurité techniques et organisationnelles pour protéger vos données personnelles.",
+    "contact": "Contact",
+    "contactText": "Si vous avez des questions sur cette politique, vous pouvez nous contacter à info@labpatagonia.com"
+  },
+  "terms": {
+    "title": "Conditions Générales",
+    "lastUpdated": "Dernière mise à jour : 15 janvier 2025",
+    "acceptance": "Acceptation des Conditions",
+    "acceptanceText": "En accédant et en utilisant ce site web, vous acceptez d'être lié par ces conditions générales.",
+    "useOfSite": "Utilisation du Site",
+    "useOfSiteText": "Ce site web est fourni uniquement à des fins informatives et éducatives liées à nos activités de recherche.",
+    "intellectualProperty": "Propriété Intellectuelle",
+    "intellectualPropertyText": "Tout le contenu de ce site web, y compris les textes, images et designs, est protégé par le droit d'auteur.",
+    "liability": "Limitation de Responsabilité",
+    "liabilityText": "Lab Patagonia ne sera pas responsable des dommages directs, indirects ou consécutifs pouvant résulter de l'utilisation de ce site web.",
+    "modifications": "Modifications",
+    "modificationsText": "Nous nous réservons le droit de modifier ces conditions à tout moment. Les changements prendront effet immédiatement après publication."
   }
 }

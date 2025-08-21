@@ -7,6 +7,14 @@
     "news": "Noticias",
     "contact": "Contacto"
   },
+  "hero": {
+    "title": "Laboratorio de Investigación Patagónica",
+    "subtitle": "Ciencia de vanguardia en el corazón de la Patagonia",
+    "cta": {
+      "primary": "Explorar Investigación",
+      "secondary": "Ver Publicaciones"
+    }
+  },
   "description": {
     "title": "Laboratorio de Investigación Patagónica",
     "subtitle": "Ciencia de vanguardia en el corazón de la Patagonia",
@@ -90,5 +98,58 @@
       "email": "info@labpatagonia.com",
       "phone": "+54 11 1234-5678"
     }
+  },
+  "cookies": {
+    "banner": {
+      "title": "Uso de Cookies",
+      "message": "Utilizamos cookies para mejorar tu experiencia en nuestro sitio web. Puedes aceptar todas las cookies o personalizar tus preferencias.",
+      "accept": "Aceptar todas",
+      "reject": "Rechazar",
+      "readMore": "Leer más"
+    },
+    "page": {
+      "title": "Política de Cookies",
+      "description": "Información sobre el uso de cookies en nuestro sitio web",
+      "whatAreCookies": "¿Qué son las cookies?",
+      "whatAreCookiesText": "Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio web. Nos ayudan a recordar tus preferencias y mejorar tu experiencia de navegación.",
+      "typesOfCookies": "Tipos de cookies que utilizamos",
+      "essential": "Cookies esenciales",
+      "essentialText": "Necesarias para el funcionamiento básico del sitio web.",
+      "analytics": "Cookies de análisis",
+      "analyticsText": "Nos ayudan a entender cómo los usuarios interactúan con nuestro sitio.",
+      "preferences": "Cookies de preferencias",
+      "preferencesText": "Recuerdan tus configuraciones y preferencias.",
+      "resetCookies": "Restablecer Preferencias de Cookies",
+      "resetText": "Puedes restablecer tus preferencias de cookies en cualquier momento haciendo clic en el botón de abajo.",
+      "resetButton": "Restablecer Cookies"
+    }
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización: 15 de enero de 2025",
+    "introduction": "Introducción",
+    "introText": "En Lab Patagonia, respetamos tu privacidad y nos comprometemos a proteger tus datos personales. Esta política explica cómo recopilamos, utilizamos y protegemos tu información.",
+    "dataCollection": "Recopilación de Datos",
+    "dataCollectionText": "Recopilamos información que nos proporcionas directamente, como cuando te contactas con nosotros o te suscribes a nuestro boletín.",
+    "dataUse": "Uso de Datos",
+    "dataUseText": "Utilizamos tus datos para mejorar nuestros servicios, comunicarnos contigo y cumplir con nuestras obligaciones legales.",
+    "dataProtection": "Protección de Datos",
+    "dataProtectionText": "Implementamos medidas de seguridad técnicas y organizativas para proteger tus datos personales.",
+    "contact": "Contacto",
+    "contactText": "Si tienes preguntas sobre esta política, puedes contactarnos en info@labpatagonia.com"
+  },
+  "terms": {
+    "title": "Términos y Condiciones",
+    "lastUpdated": "Última actualización: 15 de enero de 2025",
+    "acceptance": "Aceptación de Términos",
+    "acceptanceText": "Al acceder y utilizar este sitio web, aceptas estar sujeto a estos términos y condiciones.",
+    "useOfSite": "Uso del Sitio",
+    "useOfSiteText": "Este sitio web es proporcionado únicamente para fines informativos y educativos relacionados con nuestras actividades de investigación.",
+    "intellectualProperty": "Propiedad Intelectual",
+    "intellectualPropertyText": "Todo el contenido de este sitio web, incluyendo textos, imágenes y diseños, está protegido por derechos de autor.",
+    "liability": "Limitación de Responsabilidad",
+    "liabilityText": "Lab Patagonia no será responsable de ningún daño directo, indirecto o consecuente que pueda surgir del uso de este sitio web.",
+    "modifications": "Modificaciones",
+    "modificationsText": "Nos reservamos el derecho de modificar estos términos en cualquier momento. Los cambios entrarán en vigor inmediatamente después de su publicación."
   }
 }

@@ -20,8 +20,8 @@ const Footer: React.FC = () => {
   ];
 
   const legalLinks = [
-    { name: t('footer.legal.privacy'), href: '#privacy' },
-    { name: t('footer.legal.terms'), href: '#terms' },
+    { name: t('footer.legal.privacy'), href: '/privacy' },
+    { name: t('footer.legal.terms'), href: '/terms' },
   ];
 
   return (
