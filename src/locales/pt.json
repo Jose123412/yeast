@@ -6,6 +6,7 @@
     "publications": "Publicações",
     "news": "Notícias",
     "team": "Equipe",
+    "congresses": "Congressos",
     "contact": "Contato"
   },
   "hero": {
@@ -203,5 +204,9 @@
   "team": {
     "title": "Nossa Equipe",
     "subtitle": "Conheça os pesquisadores e profissionais que tornam possível nossa pesquisa de ponta em genética molecular e biotecnologia."
+  },
+  "congresses": {
+    "title": "Congressos e Conferências",
+    "subtitle": "Galeria fotográfica de nossa participação em eventos científicos internacionais, onde compartilhamos nossas descobertas e estabelecemos colaborações."
   }
 }

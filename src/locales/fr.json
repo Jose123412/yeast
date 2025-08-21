@@ -6,6 +6,7 @@
     "publications": "Publications",
     "news": "Actualités",
     "team": "Équipe",
+    "congresses": "Congrès",
     "contact": "Contact"
   },
   "hero": {
@@ -203,5 +204,9 @@
   "team": {
     "title": "Notre Équipe",
     "subtitle": "Rencontrez les chercheurs et professionnels qui rendent possible notre recherche de pointe en génétique moléculaire et biotechnologie."
+  },
+  "congresses": {
+    "title": "Congrès et Conférences",
+    "subtitle": "Galerie photo de notre participation aux événements scientifiques internationaux, où nous partageons nos découvertes et établissons des collaborations."
   }
 }

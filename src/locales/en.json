@@ -6,6 +6,7 @@
     "publications": "Publications",
     "news": "News",
     "team": "Team",
+    "congresses": "Congresses",
     "contact": "Contact"
   },
   "hero": {
@@ -203,5 +204,9 @@
   "team": {
     "title": "Our Team",
     "subtitle": "Meet the researchers and professionals who make our cutting-edge research in molecular genetics and biotechnology possible."
+  },
+  "congresses": {
+    "title": "Congresses and Conferences",
+    "subtitle": "Photo gallery of our participation in international scientific events, where we share our findings and establish collaborations."
   }
 }
