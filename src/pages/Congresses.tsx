@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Users, ArrowLeft, X, ChevronLeft, ChevronRight, Calendar, MapPin } from 'lucide-react';
+import { Users, ArrowLeft, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Congresses: React.FC = () => {
@@ -11,98 +11,62 @@ const Congresses: React.FC = () => {
     {
       id: 1,
       src: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Congreso Internacional de Microbiología 2024',
-      location: 'Barcelona, España',
-      date: '15-18 Octubre 2024',
-      description: 'Presentación de nuestros últimos hallazgos en genómica de levaduras patagónicas'
+      title: 'Congreso Internacional de Microbiología'
     },
     {
       id: 2,
       src: 'https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Simposio de Biotecnología Aplicada 2024',
-      location: 'Santiago, Chile',
-      date: '5-7 Septiembre 2024',
-      description: 'Workshop sobre aplicaciones industriales de levaduras nativas'
+      title: 'Simposio de Biotecnología Aplicada'
     },
     {
       id: 3,
       src: 'https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Conferencia de Genética Molecular 2024',
-      location: 'Buenos Aires, Argentina',
-      date: '20-22 Agosto 2024',
-      description: 'Mesa redonda sobre evolución experimental en microorganismos'
+      title: 'Conferencia de Genética Molecular'
     },
     {
       id: 4,
       src: 'https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Congreso Latinoamericano de Microbiología 2024',
-      location: 'Lima, Perú',
-      date: '10-13 Julio 2024',
-      description: 'Poster session sobre biodiversidad microbiana en bosques templados'
+      title: 'Congreso Latinoamericano de Microbiología'
     },
     {
       id: 5,
       src: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Simposio Internacional de Fermentaciones 2024',
-      location: 'Valdivia, Chile',
-      date: '25-27 Junio 2024',
-      description: 'Conferencia magistral sobre levaduras para producción de bebidas alcohólicas'
+      title: 'Simposio Internacional de Fermentaciones'
     },
     {
       id: 6,
       src: 'https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Congreso de Bioinformática 2024',
-      location: 'Montevideo, Uruguay',
-      date: '15-17 Mayo 2024',
-      description: 'Presentación de herramientas computacionales para análisis genómico'
+      title: 'Congreso de Bioinformática'
     },
     {
       id: 7,
       src: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Encuentro de Jóvenes Investigadores 2024',
-      location: 'Concepción, Chile',
-      date: '8-10 Abril 2024',
-      description: 'Participación de estudiantes de doctorado del laboratorio'
+      title: 'Encuentro de Jóvenes Investigadores'
     },
     {
       id: 8,
       src: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Congreso Mundial de Biotecnología 2023',
-      location: 'São Paulo, Brasil',
-      date: '12-15 Noviembre 2023',
-      description: 'Simposio sobre aplicaciones sostenibles de microorganismos nativos'
+      title: 'Congreso Mundial de Biotecnología'
     },
     {
       id: 9,
       src: 'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Conferencia de Ecología Microbiana 2023',
-      location: 'Bariloche, Argentina',
-      date: '20-23 Octubre 2023',
-      description: 'Estudio de comunidades microbianas en ecosistemas patagónicos'
+      title: 'Conferencia de Ecología Microbiana'
     },
     {
       id: 10,
       src: 'https://images.pexels.com/photos/2182975/pexels-photo-2182975.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Simposio de Genómica Comparada 2023',
-      location: 'Temuco, Chile',
-      date: '5-7 Septiembre 2023',
-      description: 'Análisis filogenético de levaduras del género Saccharomyces'
+      title: 'Simposio de Genómica Comparada'
     },
     {
       id: 11,
       src: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Congreso Internacional de Fermentación 2023',
-      location: 'Mendoza, Argentina',
-      date: '18-20 Agosto 2023',
-      description: 'Innovaciones en procesos fermentativos para la industria vitivinícola'
+      title: 'Congreso Internacional de Fermentación'
     },
     {
       id: 12,
       src: 'https://images.pexels.com/photos/2182969/pexels-photo-2182969.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Encuentro de Biotecnología Ambiental 2023',
-      location: 'Valparaíso, Chile',
-      date: '10-12 Julio 2023',
-      description: 'Aplicaciones de microorganismos en biorremediación'
+      title: 'Encuentro de Biotecnología Ambiental'
     }
   ];
 
@@ -192,10 +156,6 @@ const Congresses: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <h3 className="font-bold text-sm mb-1 line-clamp-2">{photo.title}</h3>
-                  <div className="flex items-center space-x-2 text-xs">
-                    <MapPin size={12} />
-                    <span>{photo.location}</span>
-                  </div>
                 </div>
               </div>
               
@@ -203,13 +163,6 @@ const Congresses: React.FC = () => {
                 <h3 className="font-bold text-slate-800 mb-2 line-clamp-2 group-hover:text-purple-700 transition-colors duration-300">
                   {photo.title}
                 </h3>
-                <div className="flex items-center space-x-2 text-sm text-gray-500 mb-2">
-                  <Calendar size={14} />
-                  <span>{photo.date}</span>
-                </div>
-                <p className="text-sm text-gray-600 line-clamp-2">
-                  {photo.description}
-                </p>
               </div>
             </motion.div>
           ))}
@@ -270,19 +223,6 @@ const Congresses: React.FC = () => {
                   <h2 className="text-2xl font-bold text-slate-800 mb-3">
                     {congressPhotos[selectedImage].title}
                   </h2>
-                  <div className="flex items-center space-x-4 text-gray-600 mb-3">
-                    <div className="flex items-center space-x-2">
-                      <Calendar size={16} />
-                      <span>{congressPhotos[selectedImage].date}</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <MapPin size={16} />
-                      <span>{congressPhotos[selectedImage].location}</span>
-                    </div>
-                  </div>
-                  <p className="text-gray-700 leading-relaxed">
-                    {congressPhotos[selectedImage].description}
-                  </p>
                 </div>
               </motion.div>
             </motion.div>
