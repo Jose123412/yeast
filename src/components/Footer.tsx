@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
 
   const socialLinks = [
     { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Instagram, href: 'https://www.instagram.com/yeastomics_lab/', label: 'Instagram' },
+    { icon: Instagram, href: '#', label: 'Instagram' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
     { icon: Youtube, href: '#', label: 'YouTube' },
   ];
@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
               <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl shadow-lg">
                 <Microscope size={24} className="text-white" />
               </div>
-              <h3 className="text-2xl font-bold">moleculargeneticslab</h3>
+              <h3 className="text-2xl font-bold">Lab Patagonia</h3>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
               {t('description.subtitle')}
@@ -144,7 +144,7 @@ const Footer: React.FC = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © 2025 moleculargeneticslab. All rights reserved.
+              © 2025 moleculargeneticslab.cl. All rights reserved.
             </p>
             <div className="flex space-x-6">
               {legalLinks.map((link) => (

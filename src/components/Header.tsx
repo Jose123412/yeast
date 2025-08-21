@@ -27,7 +27,7 @@ const Header: React.FC = () => {
               <Microscope size={24} className="text-white" />
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-gray-900">Molecular Genetics Lab</h1>
+              <h1 className="text-xl font-bold text-gray-900">Lab Patagonia</h1>
             </div>
           </div>
 
