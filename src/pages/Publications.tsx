@@ -11,7 +11,7 @@ const Publications: React.FC = () => {
       id: 1,
       title: 'Co-culture dynamics between Lachancea cidri and Saccharomyces cerevisiae impact fermentative aroma profile',
       journal: 'Nature Microbiology',
-      year: 2024,
+      year: 2025,
       volume: '9',
       pages: '1234-1245',
       doi: '10.1038/s41564-024-01234-5',
