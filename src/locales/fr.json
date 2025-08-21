@@ -8,7 +8,7 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Laboratoire de Recherche Patagonique",
+    "title": "Laboratoire de Génétique Moléculaire",
     "subtitle": "Science de pointe au cœur de la Patagonie",
     "cta": {
       "primary": "Explorer la Recherche",
@@ -16,7 +16,7 @@
     }
   },
   "description": {
-    "title": "Laboratoire de Recherche Patagonique",
+    "title": "Laboratoire de Génétique Moléculaire",
     "subtitle": "Science de pointe au cœur de la Patagonie",
     "text": "Notre laboratoire se consacre à la recherche scientifique d'excellence dans l'écosystème patagonique. Nous développons des études interdisciplinaires allant de la biologie moléculaire à l'écologie des écosystèmes, contribuant à la connaissance et à la conservation d'une des régions les plus importantes de la planète. Avec un focus sur la durabilité et l'innovation, nous travaillons pour générer des solutions scientifiques qui bénéficient tant à la communauté locale qu'à la communauté scientifique internationale."
   },
@@ -95,7 +95,7 @@
     "contact": {
       "title": "Contact",
       "address": "Adresse du Laboratoire",
-      "email": "info@labpatagonia.com",
+      "email": "info@moleculargeneticslab.cl",
       "phone": "+54 11 1234-5678"
     }
   },
@@ -136,7 +136,7 @@
     "dataProtection": "Protection des Données",
     "dataProtectionText": "Nous mettons en place des mesures de sécurité techniques et organisationnelles pour protéger vos données personnelles.",
     "contact": "Contact",
-    "contactText": "Si vous avez des questions sur cette politique, vous pouvez nous contacter à info@labpatagonia.com"
+    "contactText": "Si vous avez des questions sur cette politique, vous pouvez nous contacter à info@moleculargeneticslab.cl"
   },
   "terms": {
     "title": "Conditions Générales",
@@ -148,7 +148,7 @@
     "intellectualProperty": "Propriété Intellectuelle",
     "intellectualPropertyText": "Tout le contenu de ce site web, y compris les textes, images et designs, est protégé par le droit d'auteur.",
     "liability": "Limitation de Responsabilité",
-    "liabilityText": "Lab Patagonia ne sera pas responsable des dommages directs, indirects ou consécutifs pouvant résulter de l'utilisation de ce site web.",
+    "liabilityText": "Molecular Genetics Lab ne sera pas responsable des dommages directs, indirects ou consécutifs pouvant résulter de l'utilisation de ce site web.",
     "modifications": "Modifications",
     "modificationsText": "Nous nous réservons le droit de modifier ces conditions à tout moment. Les changements prendront effet immédiatement après publication."
   }

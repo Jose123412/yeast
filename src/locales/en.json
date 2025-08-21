@@ -16,7 +16,7 @@
     }
   },
   "description": {
-    "title": "Patagonian Research Laboratory",
+    "title": "Molecular Genetics Lab",
     "subtitle": "Cutting-edge science in the heart of Patagonia",
     "text": "Our laboratory is dedicated to scientific research of excellence in the Patagonian ecosystem. We develop interdisciplinary studies ranging from molecular biology to ecosystem ecology, contributing to the knowledge and conservation of one of the most important regions on the planet. With a focus on sustainability and innovation, we work to generate scientific solutions that benefit both the local community and the international scientific community."
   },
@@ -95,7 +95,7 @@
     "contact": {
       "title": "Contact",
       "address": "Laboratory Address",
-      "email": "info@labpatagonia.com",
+      "email": "info@moleculargeneticslab.cl",
       "phone": "+54 11 1234-5678"
     }
   },
@@ -136,7 +136,7 @@
     "dataProtection": "Data Protection",
     "dataProtectionText": "We implement technical and organizational security measures to protect your personal data.",
     "contact": "Contact",
-    "contactText": "If you have questions about this policy, you can contact us at info@labpatagonia.com"
+    "contactText": "If you have questions about this policy, you can contact us at info@moleculargeneticslab.cl"
   },
   "terms": {
     "title": "Terms and Conditions",
@@ -148,7 +148,7 @@
     "intellectualProperty": "Intellectual Property",
     "intellectualPropertyText": "All content on this website, including texts, images, and designs, is protected by copyright.",
     "liability": "Limitation of Liability",
-    "liabilityText": "Lab Patagonia shall not be liable for any direct, indirect, or consequential damages that may arise from the use of this website.",
+    "liabilityText": "Molecular Genetics Lab shall not be liable for any direct, indirect, or consequential damages that may arise from the use of this website.",
     "modifications": "Modifications",
     "modificationsText": "We reserve the right to modify these terms at any time. Changes will take effect immediately upon posting."
   }

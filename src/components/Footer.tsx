@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
               <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl shadow-lg">
                 <Microscope size={24} className="text-white" />
               </div>
-              <h3 className="text-2xl font-bold">Lab Patagonia</h3>
+              <h3 className="text-2xl font-bold">Molecular Genetics Lab</h3>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
               {t('description.subtitle')}

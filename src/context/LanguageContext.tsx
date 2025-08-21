@@ -2,9 +2,7 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 
 interface LanguageContextType {
   currentLanguage: string;
-  currentCurrency: string;
   setLanguage: (language: string) => void;
-  setCurrency: (currency: string) => void;
   t: (key: string) => string;
   isLoading: boolean;
 }
@@ -19,7 +17,6 @@ const translations: { [key: string]: { [key: string]: any } } = {};
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   const [currentLanguage, setCurrentLanguage] = useState('es');
-  const [currentCurrency, setCurrentCurrency] = useState('USD');
   const [isLoading, setIsLoading] = useState(true);
 
   // Load translations on mount
@@ -46,10 +43,6 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     setCurrentLanguage(language);
   };
 
-  const setCurrency = (currency: string) => {
-    setCurrentCurrency(currency);
-  };
-
   const t = (key: string): string => {
     if (isLoading) return key;
     
@@ -69,9 +62,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 
   const value: LanguageContextType = {
     currentLanguage,
-    currentCurrency,
     setLanguage,
-    setCurrency,
     t,
     isLoading,
   };

@@ -8,7 +8,7 @@
     "contact": "Contato"
   },
   "hero": {
-    "title": "Laboratório de Pesquisa Patagônico",
+    "title": "Laboratório de Genética Molecular",
     "subtitle": "Ciência de ponta no coração da Patagônia",
     "cta": {
       "primary": "Explorar Pesquisa",
@@ -16,7 +16,7 @@
     }
   },
   "description": {
-    "title": "Laboratório de Pesquisa Patagônico",
+    "title": "Laboratório de Genética Molecular",
     "subtitle": "Ciência de ponta no coração da Patagônia",
     "text": "Nosso laboratório se dedica à pesquisa científica de excelência no ecossistema patagônico. Desenvolvemos estudos interdisciplinares que abrangem desde a biologia molecular até a ecologia de ecossistemas, contribuindo para o conhecimento e conservação de uma das regiões mais importantes do planeta. Com foco na sustentabilidade e inovação, trabalhamos para gerar soluções científicas que beneficiem tanto a comunidade local quanto a comunidade científica internacional."
   },
@@ -95,7 +95,7 @@
     "contact": {
       "title": "Contato",
       "address": "Endereço do Laboratório",
-      "email": "info@labpatagonia.com",
+      "email": "info@moleculargeneticslab.cl",
       "phone": "+54 11 1234-5678"
     }
   },
@@ -136,7 +136,7 @@
     "dataProtection": "Proteção de Dados",
     "dataProtectionText": "Implementamos medidas de segurança técnicas e organizacionais para proteger seus dados pessoais.",
     "contact": "Contato",
-    "contactText": "Se você tiver dúvidas sobre esta política, pode nos contatar em info@labpatagonia.com"
+    "contactText": "Se você tiver dúvidas sobre esta política, pode nos contatar em info@moleculargeneticslab.cl"
   },
   "terms": {
     "title": "Termos e Condições",
@@ -148,7 +148,7 @@
     "intellectualProperty": "Propriedade Intelectual",
     "intellectualPropertyText": "Todo o conteúdo deste site, incluindo textos, imagens e designs, está protegido por direitos autorais.",
     "liability": "Limitação de Responsabilidade",
-    "liabilityText": "A Lab Patagonia não será responsável por quaisquer danos diretos, indiretos ou consequentes que possam surgir do uso deste site.",
+    "liabilityText": "A Molecular Genetics Lab não será responsável por quaisquer danos diretos, indiretos ou consequentes que possam surgir do uso deste site.",
     "modifications": "Modificações",
     "modificationsText": "Reservamo-nos o direito de modificar estes termos a qualquer momento. As alterações entrarão em vigor imediatamente após a publicação."
   }

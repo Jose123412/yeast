@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Microscope } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-import LanguageCurrencySelector from './LanguageCurrencySelector';
+import LanguageSelector from './LanguageCurrencySelector';
 
 const Header: React.FC = () => {
   const { t } = useLanguage();
@@ -27,7 +27,7 @@ const Header: React.FC = () => {
               <Microscope size={24} className="text-white" />
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-gray-900">Lab Patagonia</h1>
+              <h1 className="text-xl font-bold text-gray-900">Molecular Genetics Lab</h1>
             </div>
           </div>
 
@@ -44,9 +44,9 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* Language/Currency Selector */}
+          {/* Language Selector */}
           <div className="hidden md:block">
-            <LanguageCurrencySelector />
+            <LanguageSelector />
           </div>
 
           {/* Mobile Menu Button */}
@@ -79,7 +79,9 @@ const Header: React.FC = () => {
               ))}
             </nav>
             <div className="mt-4 pt-4 border-t border-gray-200">
-              <LanguageCurrencySelector />
+              <div className="flex justify-center">
+                <LanguageSelector />
+              </div>
             </div>
           </motion.div>
         )}
