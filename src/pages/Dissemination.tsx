@@ -106,10 +106,10 @@ const Dissemination: React.FC = () => {
             <Megaphone size={48} className="text-white" />
           </motion.div>
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-slate-800 to-orange-800 bg-clip-text text-transparent mb-6">
-            Dissemination of Science
+            {t('dissemination.title')}
           </h1>
           <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
-            Explore our science dissemination activities and collaborative events that bring research to the community.
+            {t('dissemination.subtitle')}
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-red-500 mx-auto rounded-full"></div>
         </motion.div>
@@ -123,7 +123,7 @@ const Dissemination: React.FC = () => {
           className="flex items-center space-x-2 text-orange-600 hover:text-orange-700 font-medium mb-12 transition-colors duration-200"
         >
           <ArrowLeft size={20} />
-          <span>Back to Home</span>
+          <span>{t('common.backToHome')}</span>
         </motion.button>
 
         {/* Sections */}
@@ -143,12 +143,12 @@ const Dissemination: React.FC = () => {
                     <Icon size={28} className="text-white" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-slate-800">
-                    {section.title}
+                    {t(`dissemination.${section.id}.title`)}
                   </h2>
                 </div>
                 
                 <p className="text-gray-600 leading-relaxed mb-8 text-lg">
-                  {section.description}
+                  {t(`dissemination.${section.id}.description`)}
                 </p>
 
                 {/* Photo Preview Grid */}
@@ -175,7 +175,7 @@ const Dissemination: React.FC = () => {
                   onClick={() => openGallery(section.id)}
                   className={`px-8 py-3 bg-gradient-to-r ${section.gradient} text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300`}
                 >
-                  View All {section.photos.length} Photos
+                  {t('dissemination.viewAllPhotos', { count: section.photos.length })}
                 </motion.button>
               </motion.div>
             );
@@ -238,10 +238,10 @@ const Dissemination: React.FC = () => {
                     {currentSection.photos[selectedImage].title}
                   </h2>
                   <p className="text-gray-600 mb-2">
-                    {currentSection.title}
+                    {t(`dissemination.${selectedSection}.title`)}
                   </p>
                   <p className="text-sm text-gray-500">
-                    Image {selectedImage + 1} of {currentSection.photos.length}
+                    {t('dissemination.imageCounter', { current: selectedImage + 1, total: currentSection.photos.length })}
                   </p>
                 </div>
               </motion.div>

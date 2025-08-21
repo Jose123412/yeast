@@ -7,6 +7,8 @@
     "news": "Actualités",
     "team": "Équipe",
     "congresses": "Congrès",
+    "outreach": "Sensibilisation",
+    "dissemination": "Diffusion",
     "contact": "Contact"
   },
   "hero": {
@@ -33,6 +35,8 @@
   },
   "publications": {
     "title": "Publications Sélectionnées",
+    "subtitle": "Explorez nos dernières publications de recherche et contributions scientifiques au domaine de la génétique moléculaire et de la biotechnologie.",
+    "downloadPdf": "Télécharger PDF",
     "1": {
       "title": "Impact du changement climatique sur la biodiversité patagonique",
       "link": "https://example.com/publication1"
@@ -208,5 +212,41 @@
   "congresses": {
     "title": "Congrès et Conférences",
     "subtitle": "Galerie photo de notre participation aux événements scientifiques internationaux, où nous partageons nos découvertes et établissons des collaborations."
+  },
+  "outreach": {
+    "title": "Sensibilisation et Travail de Terrain",
+    "subtitle": "Explorez nos activités d'échantillonnage sur le terrain et nos collaborations internationales dans l'étude des levures patagoniennes.",
+    "viewAllPhotos": "Voir toutes les {{count}} photos",
+    "imageCounter": "Image {{current}} sur {{total}}",
+    "international": {
+      "title": "Échantillonnage avec des Collègues Internationaux",
+      "description": "Notre laboratoire s'enrichit des visites fréquentes de nos collaborateurs internationaux, experts dans le domaine des levures. Nous avons eu l'honneur d'accueillir Gianni Litti, Daniela Delneri, Gill Fisher, Lucía Morales, Dunkan Greig et Rike Stelkens, entre autres. Ces visites sont une opportunité précieuse pour mener des échantillonnages conjoints dans les habitats naturels des levures que nous étudions, et servent également de moment clé pour discuter des avancées scientifiques et planifier de nouveaux projets collaboratifs."
+    },
+    "nothofagus": {
+      "title": "Prospection de Nothofagus pumilio",
+      "description": "En collaboration avec d'autres laboratoires de recherche au Chili, nous faisons partie du Noyau du Millénaire LiLi. Au cours de la première année de ce projet, nous avons mené une campagne d'échantillonnage exhaustive le long d'un large gradient latitudinal, de la région de Ñuble (36°S) à Coyhaique (45°S). Ce travail de terrain a été effectué sur les quatre saisons pour évaluer la diversité et la dispersion des levures habitant l'écorce de Nothofagus pumilio (Lenga) à différentes altitudes. Les données collectées ont été fondamentales pour le développement de plusieurs thèses de premier cycle et de doctorat, ainsi que pour la publication d'articles scientifiques."
+    },
+    "puerto-williams-1": {
+      "title": "Échantillonnage dans la Ville la Plus Australe du Monde",
+      "description": "Avec l'objectif de déterminer précisément la distribution des levures Saccharomyces et de trouver des souches non-Saccharomyces avec des phénotypes d'intérêt biotechnologique, notre laboratoire a étendu sa prospection aux confins les plus australs des forêts tempérées du Chili. Cette entreprise nous a menés à explorer des zones comme Karukinka et, plus récemment, la ville la plus australe du monde : Puerto Williams. Dans ces paysages reculés, nous avons identifié diverses espèces de Nothofagus, arbres qui abritent une riche diversité de levures sur leur écorce."
+    },
+    "puerto-williams-2": {
+      "title": "Échantillonnage dans la Ville la Plus Australe du Monde",
+      "description": "Documentation étendue de nos activités d'échantillonnage à Puerto Williams, présentant les paysages diversifiés et les méthodologies de recherche employées dans cet environnement unique."
+    }
+  },
+  "dissemination": {
+    "title": "Diffusion de la Science",
+    "subtitle": "Explorez nos activités de diffusion scientifique et événements collaboratifs qui rapprochent la recherche de la communauté.",
+    "viewAllPhotos": "Voir toutes les {{count}} photos",
+    "imageCounter": "Image {{current}} sur {{total}}",
+    "dissemination": {
+      "title": "Diffusion",
+      "description": "Notre laboratoire s'enrichit des visites fréquentes de nos collaborateurs internationaux, experts dans le domaine des levures. Nous avons eu l'honneur d'accueillir Gianni Litti, Daniela Delneri, Gill Fisher, Lucía Morales, Dunkan Greig et Rike Stelkens, entre autres. Ces visites sont une opportunité précieuse pour mener des échantillonnages conjoints dans les habitats naturels des levures que nous étudions, et servent également de moment clé pour discuter des avancées scientifiques et planifier de nouveaux projets collaboratifs."
+    },
+    "whiskey": {
+      "title": "Dégustation de whisky",
+      "description": "En collaboration avec d'autres laboratoires de recherche au Chili, nous faisons partie du Noyau du Millénaire LiLi. Au cours de la première année de ce projet, nous avons mené une campagne d'échantillonnage exhaustive le long d'un large gradient latitudinal, de la région de Ñuble (36°S) à Coyhaique (45°S). Ce travail de terrain a été effectué sur les quatre saisons pour évaluer la diversité et la dispersion des levures habitant l'écorce de Nothofagus pumilio (Lenga) à différentes altitudes. Les données collectées ont été fondamentales pour le développement de plusieurs thèses de premier cycle et de doctorat, ainsi que pour la publication d'articles scientifiques."
+    }
   }
 }

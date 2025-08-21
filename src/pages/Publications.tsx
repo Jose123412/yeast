@@ -95,7 +95,7 @@ const Publications: React.FC = () => {
             {t('publications.title')}
           </h1>
           <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
-            Explore our latest research publications and scientific contributions to the field of molecular genetics and biotechnology.
+            {t('publications.subtitle')}
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"></div>
         </motion.div>
@@ -167,7 +167,7 @@ const Publications: React.FC = () => {
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
                   >
-                    <Download size={14} />
+                      {t('publications.downloadPdf')}
                     <span>Download PDF</span>
                   </a>
                 </div>

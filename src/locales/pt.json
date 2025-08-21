@@ -7,6 +7,8 @@
     "news": "Notícias",
     "team": "Equipe",
     "congresses": "Congressos",
+    "outreach": "Divulgação",
+    "dissemination": "Difusão",
     "contact": "Contato"
   },
   "hero": {
@@ -33,6 +35,8 @@
   },
   "publications": {
     "title": "Publicações Selecionadas",
+    "subtitle": "Explore nossas últimas publicações de pesquisa e contribuições científicas ao campo da genética molecular e biotecnologia.",
+    "downloadPdf": "Baixar PDF",
     "1": {
       "title": "Impacto das mudanças climáticas na biodiversidade patagônica",
       "link": "https://example.com/publication1"
@@ -208,5 +212,41 @@
   "congresses": {
     "title": "Congressos e Conferências",
     "subtitle": "Galeria fotográfica de nossa participação em eventos científicos internacionais, onde compartilhamos nossas descobertas e estabelecemos colaborações."
+  },
+  "outreach": {
+    "title": "Divulgação e Trabalho de Campo",
+    "subtitle": "Explore nossas atividades de amostragem em campo e colaborações internacionais no estudo de leveduras patagônicas.",
+    "viewAllPhotos": "Ver todas as {{count}} fotos",
+    "imageCounter": "Imagem {{current}} de {{total}}",
+    "international": {
+      "title": "Amostragem com Colegas Internacionais",
+      "description": "Nosso laboratório se enriquece com as frequentes visitas de nossos colaboradores internacionais, especialistas no campo das leveduras. Tivemos a honra de receber Gianni Litti, Daniela Delneri, Gill Fisher, Lucía Morales, Dunkan Greig e Rike Stelkens, entre outros. Essas visitas são uma oportunidade valiosa para realizar amostragens conjuntas nos habitats naturais das leveduras que estudamos, e também servem como um momento-chave para discutir avanços científicos e planejar novos projetos colaborativos."
+    },
+    "nothofagus": {
+      "title": "Prospecção de Nothofagus pumilio",
+      "description": "Em colaboração com outros laboratórios de pesquisa no Chile, fazemos parte do Núcleo do Milênio LiLi. Durante o primeiro ano deste projeto, conduzimos uma campanha exaustiva de amostragem ao longo de um amplo gradiente latitudinal, da Região de Ñuble (36°S) até Coyhaique (45°S). Este trabalho de campo foi realizado em todas as quatro estações para avaliar a diversidade e dispersão de leveduras que habitam a casca de Nothofagus pumilio (Lenga) em diferentes altitudes. Os dados coletados foram fundamentais para o desenvolvimento de várias teses de graduação e doutorado, bem como para a publicação de artigos científicos."
+    },
+    "puerto-williams-1": {
+      "title": "Amostragem na Cidade Mais Austral do Mundo",
+      "description": "Com o objetivo de determinar precisamente a distribuição de leveduras Saccharomyces e encontrar cepas não-Saccharomyces com fenótipos de interesse biotecnológico, nosso laboratório estendeu sua prospecção aos confins mais austrais das florestas temperadas do Chile. Este empreendimento nos levou a explorar áreas como Karukinka e, mais recentemente, a cidade mais austral do mundo: Puerto Williams. Nessas paisagens remotas, identificamos várias espécies de Nothofagus, árvores que abrigam uma rica diversidade de leveduras em sua casca."
+    },
+    "puerto-williams-2": {
+      "title": "Amostragem na Cidade Mais Austral do Mundo",
+      "description": "Documentação estendida de nossas atividades de amostragem em Puerto Williams, mostrando as diversas paisagens e metodologias de pesquisa empregadas neste ambiente único."
+    }
+  },
+  "dissemination": {
+    "title": "Difusão da Ciência",
+    "subtitle": "Explore nossas atividades de difusão científica e eventos colaborativos que aproximam a pesquisa da comunidade.",
+    "viewAllPhotos": "Ver todas as {{count}} fotos",
+    "imageCounter": "Imagem {{current}} de {{total}}",
+    "dissemination": {
+      "title": "Difusão",
+      "description": "Nosso laboratório se enriquece com as frequentes visitas de nossos colaboradores internacionais, especialistas no campo das leveduras. Tivemos a honra de receber Gianni Litti, Daniela Delneri, Gill Fisher, Lucía Morales, Dunkan Greig e Rike Stelkens, entre outros. Essas visitas são uma oportunidade valiosa para realizar amostragens conjuntas nos habitats naturais das leveduras que estudamos, e também servem como um momento-chave para discutir avanços científicos e planejar novos projetos colaborativos."
+    },
+    "whiskey": {
+      "title": "Degustação de whisky",
+      "description": "Em colaboração com outros laboratórios de pesquisa no Chile, fazemos parte do Núcleo do Milênio LiLi. Durante o primeiro ano deste projeto, conduzimos uma campanha exaustiva de amostragem ao longo de um amplo gradiente latitudinal, da Região de Ñuble (36°S) até Coyhaique (45°S). Este trabalho de campo foi realizado em todas as quatro estações para avaliar a diversidade e dispersão de leveduras que habitam a casca de Nothofagus pumilio (Lenga) em diferentes altitudes. Os dados coletados foram fundamentais para o desenvolvimento de várias teses de graduação e doutorado, bem como para a publicação de artigos científicos."
+    }
   }
 }
