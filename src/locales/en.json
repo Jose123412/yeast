@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "research": "Research",
+    "publications": "Publications",
+    "news": "News",
+    "contact": "Contact"
+  },
+  "description": {
+    "title": "Patagonian Research Laboratory",
+    "subtitle": "Cutting-edge science in the heart of Patagonia",
+    "text": "Our laboratory is dedicated to scientific research of excellence in the Patagonian ecosystem. We develop interdisciplinary studies ranging from molecular biology to ecosystem ecology, contributing to the knowledge and conservation of one of the most important regions on the planet. With a focus on sustainability and innovation, we work to generate scientific solutions that benefit both the local community and the international scientific community."
+  },
+  "priority": {
+    "title": "Priority Scientific Areas",
+    "1": "Molecular Biology and Genetics",
+    "2": "Ecosystem Ecology",
+    "3": "Climate Change",
+    "4": "Biodiversity and Conservation",
+    "5": "Applied Biotechnology",
+    "6": "Soil Sciences"
+  },
+  "publications": {
+    "title": "Selected Publications",
+    "1": {
+      "title": "Climate change impact on Patagonian biodiversity",
+      "link": "https://example.com/publication1"
+    },
+    "2": {
+      "title": "New endemic species discovered in the region",
+      "link": "https://example.com/publication2"
+    },
+    "3": {
+      "title": "Soil conservation techniques in arid zones",
+      "link": "https://example.com/publication3"
+    },
+    "4": {
+      "title": "Biotechnology applied to sustainable agriculture",
+      "link": "https://example.com/publication4"
+    }
+  },
+  "labdimensions": {
+    "title": "Laboratory Dimensions",
+    "1": {
+      "title": "Congresses",
+      "description": "Active participation in international scientific conferences"
+    },
+    "2": {
+      "title": "Sampling",
+      "description": "Systematic collection of field samples"
+    },
+    "3": {
+      "title": "Science Dissemination",
+      "description": "Communication of results to the community"
+    },
+    "4": {
+      "title": "Team",
+      "description": "Specialized researchers and technical staff"
+    }
+  },
+  "news": {
+    "title": "Recent News",
+    "1": {
+      "title": "New funded research project",
+      "date": "March 15, 2025"
+    },
+    "2": {
+      "title": "International collaboration established",
+      "date": "March 8, 2025"
+    },
+    "3": {
+      "title": "Publication in high-impact journal",
+      "date": "March 1, 2025"
+    }
+  },
+  "footer": {
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms and Conditions"
+    },
+    "sections": {
+      "research": "Research",
+      "team": "Team",
+      "facilities": "Facilities"
+    },
+    "contact": {
+      "title": "Contact",
+      "address": "Laboratory Address",
+      "email": "info@labpatagonia.com",
+      "phone": "+54 11 1234-5678"
+    }
+  }
+}

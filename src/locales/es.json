@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca",
+    "research": "Investigación",
+    "publications": "Publicaciones",
+    "news": "Noticias",
+    "contact": "Contacto"
+  },
+  "description": {
+    "title": "Laboratorio de Investigación Patagónica",
+    "subtitle": "Ciencia de vanguardia en el corazón de la Patagonia",
+    "text": "Nuestro laboratorio se dedica a la investigación científica de excelencia en el ecosistema patagónico. Desarrollamos estudios interdisciplinarios que abarcan desde la biología molecular hasta la ecología de ecosistemas, contribuyendo al conocimiento y conservación de una de las regiones más importantes del planeta. Con un enfoque en la sustentabilidad y la innovación, trabajamos para generar soluciones científicas que beneficien tanto a la comunidad local como a la comunidad científica internacional."
+  },
+  "priority": {
+    "title": "Áreas Científicas Prioritarias",
+    "1": "Biología Molecular y Genética",
+    "2": "Ecología de Ecosistemas",
+    "3": "Cambio Climático",
+    "4": "Biodiversidad y Conservación",
+    "5": "Biotecnología Aplicada",
+    "6": "Ciencias del Suelo"
+  },
+  "publications": {
+    "title": "Publicaciones Destacadas",
+    "1": {
+      "title": "Impacto del cambio climático en la biodiversidad patagónica",
+      "link": "https://example.com/publication1"
+    },
+    "2": {
+      "title": "Nuevas especies endémicas descubiertas en la región",
+      "link": "https://example.com/publication2"
+    },
+    "3": {
+      "title": "Técnicas de conservación de suelos en zonas áridas",
+      "link": "https://example.com/publication3"
+    },
+    "4": {
+      "title": "Biotecnología aplicada a la agricultura sustentable",
+      "link": "https://example.com/publication4"
+    }
+  },
+  "labdimensions": {
+    "title": "Dimensiones del Laboratorio",
+    "1": {
+      "title": "Congresos",
+      "description": "Participación activa en conferencias científicas internacionales"
+    },
+    "2": {
+      "title": "Muestreo",
+      "description": "Recolección sistemática de muestras en terreno"
+    },
+    "3": {
+      "title": "Divulgación Científica",
+      "description": "Comunicación de resultados a la comunidad"
+    },
+    "4": {
+      "title": "Equipo",
+      "description": "Investigadores especializados y personal técnico"
+    }
+  },
+  "news": {
+    "title": "Noticias Recientes",
+    "1": {
+      "title": "Nuevo proyecto de investigación financiado",
+      "date": "15 de Marzo, 2025"
+    },
+    "2": {
+      "title": "Colaboración internacional establecida",
+      "date": "8 de Marzo, 2025"
+    },
+    "3": {
+      "title": "Publicación en revista de alto impacto",
+      "date": "1 de Marzo, 2025"
+    }
+  },
+  "footer": {
+    "legal": {
+      "privacy": "Política de Privacidad",
+      "terms": "Términos y Condiciones"
+    },
+    "sections": {
+      "research": "Investigación",
+      "team": "Equipo",
+      "facilities": "Instalaciones"
+    },
+    "contact": {
+      "title": "Contacto",
+      "address": "Dirección del Laboratorio",
+      "email": "info@labpatagonia.com",
+      "phone": "+54 11 1234-5678"
+    }
+  }
+}

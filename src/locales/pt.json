@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "research": "Pesquisa",
+    "publications": "Publicações",
+    "news": "Notícias",
+    "contact": "Contato"
+  },
+  "description": {
+    "title": "Laboratório de Pesquisa Patagônico",
+    "subtitle": "Ciência de ponta no coração da Patagônia",
+    "text": "Nosso laboratório se dedica à pesquisa científica de excelência no ecossistema patagônico. Desenvolvemos estudos interdisciplinares que abrangem desde a biologia molecular até a ecologia de ecossistemas, contribuindo para o conhecimento e conservação de uma das regiões mais importantes do planeta. Com foco na sustentabilidade e inovação, trabalhamos para gerar soluções científicas que beneficiem tanto a comunidade local quanto a comunidade científica internacional."
+  },
+  "priority": {
+    "title": "Áreas Científicas Prioritárias",
+    "1": "Biologia Molecular e Genética",
+    "2": "Ecologia de Ecossistemas",
+    "3": "Mudanças Climáticas",
+    "4": "Biodiversidade e Conservação",
+    "5": "Biotecnologia Aplicada",
+    "6": "Ciências do Solo"
+  },
+  "publications": {
+    "title": "Publicações Selecionadas",
+    "1": {
+      "title": "Impacto das mudanças climáticas na biodiversidade patagônica",
+      "link": "https://example.com/publication1"
+    },
+    "2": {
+      "title": "Novas espécies endêmicas descobertas na região",
+      "link": "https://example.com/publication2"
+    },
+    "3": {
+      "title": "Técnicas de conservação de solos em zonas áridas",
+      "link": "https://example.com/publication3"
+    },
+    "4": {
+      "title": "Biotecnologia aplicada à agricultura sustentável",
+      "link": "https://example.com/publication4"
+    }
+  },
+  "labdimensions": {
+    "title": "Dimensões do Laboratório",
+    "1": {
+      "title": "Congressos",
+      "description": "Participação ativa em conferências científicas internacionais"
+    },
+    "2": {
+      "title": "Amostragem",
+      "description": "Coleta sistemática de amostras em campo"
+    },
+    "3": {
+      "title": "Divulgação Científica",
+      "description": "Comunicação de resultados para a comunidade"
+    },
+    "4": {
+      "title": "Equipe",
+      "description": "Pesquisadores especializados e equipe técnica"
+    }
+  },
+  "news": {
+    "title": "Notícias Recentes",
+    "1": {
+      "title": "Novo projeto de pesquisa financiado",
+      "date": "15 de Março, 2025"
+    },
+    "2": {
+      "title": "Colaboração internacional estabelecida",
+      "date": "8 de Março, 2025"
+    },
+    "3": {
+      "title": "Publicação em revista de alto impacto",
+      "date": "1 de Março, 2025"
+    }
+  },
+  "footer": {
+    "legal": {
+      "privacy": "Política de Privacidade",
+      "terms": "Termos e Condições"
+    },
+    "sections": {
+      "research": "Pesquisa",
+      "team": "Equipe",
+      "facilities": "Instalações"
+    },
+    "contact": {
+      "title": "Contato",
+      "address": "Endereço do Laboratório",
+      "email": "info@labpatagonia.com",
+      "phone": "+54 11 1234-5678"
+    }
+  }
+}
