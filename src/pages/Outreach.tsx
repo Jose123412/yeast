@@ -65,32 +65,24 @@ const Outreach: React.FC = () => {
   const sections = [
     {
       id: 'international',
-      title: 'Sampling with International Colleagues',
-      description: 'Our laboratory is enriched by frequent visits from our international collaborators, who are experts in the field of yeasts. We have had the honor of welcoming Gianni Litti, Daniela Delneri, Gill Fisher, Lucía Morales, Dunkan Greig, and Rike Stelkens, among others. These visits are a valuable opportunity to conduct joint sampling in the natural habitats of the yeasts we study, and also serve as a key time to discuss scientific advancements and plan new collaborative projects.',
       photos: internationalPhotos,
       icon: Users,
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
       id: 'nothofagus',
-      title: 'Nothofagus pumilio Prospection',
-      description: 'In collaboration with other research laboratories in Chile, we are part of the Millennium Nucleus LiLi. During the first year of this project, we conducted an exhaustive sampling campaign along a wide latitudinal gradient, from the Ñuble Region (36°S) to Coyhaique (45°S). This fieldwork was carried out across all four seasons to assess the diversity and dispersal of yeasts inhabiting the bark of Nothofagus pumilio (Lenga) at different altitudes. The data collected have been fundamental for the development of several undergraduate and doctoral theses, as well as for the publication of scientific articles.',
       photos: nothofagusPhotos,
       icon: TreePine,
       gradient: 'from-green-500 to-emerald-500'
     },
     {
       id: 'puerto-williams-1',
-      title: 'Sampling in the World\'s Southernmost City',
-      description: 'With the objective of precisely determining the distribution of Saccharomyces yeasts and finding non-Saccharomyces strains with phenotypes of biotechnological interest, our laboratory has extended its prospecting to the southernmost reaches of Chile\'s temperate forests. This endeavor has led us to explore areas such as Karukinka and, more recently, the world\'s southernmost city: Puerto Williams. In these remote landscapes, we have identified various Nothofagus species, trees that host a rich diversity of yeasts on their bark.',
       photos: puertoWilliamsPhotos1,
       icon: MapPin,
       gradient: 'from-purple-500 to-pink-500'
     },
     {
       id: 'puerto-williams-2',
-      title: 'Sampling in the World\'s Southernmost City',
-      description: 'Extended documentation of our sampling activities in Puerto Williams, showcasing the diverse landscapes and research methodologies employed in this unique environment.',
       photos: puertoWilliamsPhotos2,
       icon: MapPin,
       gradient: 'from-orange-500 to-red-500'

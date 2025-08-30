@@ -167,8 +167,7 @@ const Publications: React.FC = () => {
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
                   >
-                      {t('publications.downloadPdf')}
-                    <span>Download PDF</span>
+                    <span>{t('publications.downloadPdf')}</span>
                   </a>
                 </div>
               </div>

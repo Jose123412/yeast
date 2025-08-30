@@ -67,7 +67,7 @@ const Publications: React.FC = () => {
                     {t(`publications.${pub}.title`)}
                   </h3>
                   <div className="flex items-center text-cyan-300 group-hover:text-cyan-200 transition-colors duration-300">
-                    <span className="text-sm font-semibold">Read more</span>
+                    <span className="text-sm font-semibold">{t('newsPage.readMore')}</span>
                     <motion.div
                       whileHover={{ x: 3 }}
                       transition={{ duration: 0.2 }}
@@ -95,7 +95,7 @@ const Publications: React.FC = () => {
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
           >
-            <span>View All Publications</span>
+            <span>{t('publications.viewAll')}</span>
             <ExternalLink size={20} />
           </motion.a>
         </motion.div>
