@@ -36,23 +36,25 @@
   "publications": {
     "title": "Selected Publications",
     "subtitle": "Explore our latest research publications and scientific contributions to the field of molecular genetics and biotechnology.",
-    "downloadPdf": "Download PDF",
+    "readMore": "Read more",
     "viewAll": "View All Publications",
+    "downloadPdf": "Download PDF",
+    "link": "/Publications",
     "1": {
-      "title": "Climate change impact on Patagonian biodiversity",
-      "link": "https://example.com/publication1"
+      "title": "Co-culture dynamics between Lachancea cidri and Saccharomyces cerevisiae impact fermentative aroma profile",
+      "link": "/papers/Zavaleta-et-al.-2025.pdf"
     },
     "2": {
-      "title": "New endemic species discovered in the region",
-      "link": "https://example.com/publication2"
+      "title": "In Vivo Monitoring of Transcriptional Activity During Metabolic Transition Using a Bioluminescent Reporter in Yeast",
+      "link": "/papers/Munoz-et-al.-2025.pdf"
     },
     "3": {
-      "title": "Soil conservation techniques in arid zones",
-      "link": "https://example.com/publication3"
+      "title": "Experimental evolution and hybridization enhance the fermentative capacity of wild Saccharomyces eubayanus strains",
+      "link": "/papers/Vega-et-al.-2025.pdf"
     },
     "4": {
-      "title": "Biotechnology applied to sustainable agriculture",
-      "link": "https://example.com/publication4"
+      "title": "High ectomycorrhizal relative abundance during winter at the treeline",
+      "link": "/papers/Saona-et-al-2025.pdf"
     }
   },
   "labdimensions": {

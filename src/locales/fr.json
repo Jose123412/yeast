@@ -35,24 +35,26 @@
   },
   "publications": {
     "title": "Publications Sélectionnées",
-    "subtitle": "Explorez nos dernières publications de recherche et contributions scientifiques au domaine de la génétique moléculaire et de la biotechnologie.",
+    "subtitle": "Découvrez nos dernières publications de recherche et contributions scientifiques dans le domaine de la génétique moléculaire et de la biotechnologie.",
+    "readMore": "Lire la suite",
+    "viewAll": "Voir toutes les publications",
     "downloadPdf": "Télécharger PDF",
-    "viewAll": "Voir Toutes les Publications",
+    "link": "/Publications",
     "1": {
-      "title": "Impact du changement climatique sur la biodiversité patagonique",
-      "link": "https://example.com/publication1"
+      "title": "Dynamique de co-culture entre Lachancea cidri et Saccharomyces cerevisiae impacte le profil aromatique fermentatif",
+      "link": "/papers/Zavaleta-et-al.-2025.pdf"
     },
     "2": {
-      "title": "Nouvelles espèces endémiques découvertes dans la région",
-      "link": "https://example.com/publication2"
+      "title": "Suivi in vivo de l'activité transcriptionnelle pendant la transition métabolique à l'aide d'un rapporteur bioluminescent chez la levure",
+      "link": "/papers/Munoz-et-al.-2025.pdf"
     },
     "3": {
-      "title": "Techniques de conservation des sols en zones arides",
-      "link": "https://example.com/publication3"
+      "title": "L'évolution expérimentale et l'hybridation améliorent la capacité fermentative des souches sauvages de Saccharomyces eubayanus",
+      "link": "/papers/Vega-et-al.-2025.pdf"
     },
     "4": {
-      "title": "Biotechnologie appliquée à l'agriculture durable",
-      "link": "https://example.com/publication4"
+      "title": "Haute abondance relative d'ectomycorhizes pendant l'hiver à la limite des arbres",
+      "link": "/papers/Saona-et-al-2025.pdf"
     }
   },
   "labdimensions": {

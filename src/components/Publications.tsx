@@ -15,7 +15,7 @@ const Publications: React.FC = () => {
         <div className="absolute top-10 left-1/4 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-10 right-1/4 w-48 h-48 bg-cyan-500/5 rounded-full blur-2xl animate-pulse delay-1000"></div>
       </div>
-      
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -39,6 +39,7 @@ const Publications: React.FC = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full"></div>
         </motion.div>
 
+        {/* Publications grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
           {publications.map((pub, index) => (
             <motion.a
@@ -55,7 +56,7 @@ const Publications: React.FC = () => {
             >
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
-                  <motion.div 
+                  <motion.div
                     whileHover={{ rotate: 5, scale: 1.1 }}
                     className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl shadow-lg"
                   >
@@ -67,11 +68,8 @@ const Publications: React.FC = () => {
                     {t(`publications.${pub}.title`)}
                   </h3>
                   <div className="flex items-center text-cyan-300 group-hover:text-cyan-200 transition-colors duration-300">
-                    <span className="text-sm font-semibold">{t('newsPage.readMore')}</span>
-                    <motion.div
-                      whileHover={{ x: 3 }}
-                      transition={{ duration: 0.2 }}
-                    >
+                    <span className="text-sm font-semibold">{t('publications.readMore')}</span>
+                    <motion.div whileHover={{ x: 3 }} transition={{ duration: 0.2 }}>
                       <ExternalLink size={16} className="ml-2" />
                     </motion.div>
                   </div>
@@ -90,7 +88,7 @@ const Publications: React.FC = () => {
           className="text-center mt-12"
         >
           <motion.a
-            href="/publications"
+            href={t('publications.link')}
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
@@ -98,6 +96,7 @@ const Publications: React.FC = () => {
             <span>{t('publications.viewAll')}</span>
             <ExternalLink size={20} />
           </motion.a>
+
         </motion.div>
       </div>
     </section>

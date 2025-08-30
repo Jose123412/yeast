@@ -35,24 +35,26 @@
   },
   "publications": {
     "title": "Publicações Selecionadas",
-    "subtitle": "Explore nossas últimas publicações de pesquisa e contribuições científicas ao campo da genética molecular e biotecnologia.",
+    "subtitle": "Explore nossas últimas publicações de pesquisa e contribuições científicas no campo da genética molecular e biotecnologia.",
+    "readMore": "Ler mais",
+    "viewAll": "Ver todas as publicações",
     "downloadPdf": "Baixar PDF",
-    "viewAll": "Ver Todas as Publicações",
+    "link": "/Publications",
     "1": {
-      "title": "Impacto das mudanças climáticas na biodiversidade patagônica",
-      "link": "https://example.com/publication1"
+      "title": "Dinâmica de co-cultura entre Lachancea cidri e Saccharomyces cerevisiae impacta o perfil aromático fermentativo",
+      "link": "/papers/Zavaleta-et-al.-2025.pdf"
     },
     "2": {
-      "title": "Novas espécies endêmicas descobertas na região",
-      "link": "https://example.com/publication2"
+      "title": "Monitoramento in vivo da atividade transcricional durante a transição metabólica usando um repórter bioluminescente em levedura",
+      "link": "/papers/Munoz-et-al.-2025.pdf"
     },
     "3": {
-      "title": "Técnicas de conservação de solos em zonas áridas",
-      "link": "https://example.com/publication3"
+      "title": "Evolução experimental e hibridização aumentam a capacidade fermentativa de cepas selvagens de Saccharomyces eubayanus",
+      "link": "/papers/Vega-et-al.-2025.pdf"
     },
     "4": {
-      "title": "Biotecnologia aplicada à agricultura sustentável",
-      "link": "https://example.com/publication4"
+      "title": "Alta abundância relativa de ectomicorrizas durante o inverno na linha de árvores",
+      "link": "/papers/Saona-et-al-2025.pdf"
     }
   },
   "labdimensions": {

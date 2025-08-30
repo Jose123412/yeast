@@ -66,7 +66,7 @@ const News: React.FC = () => {
                 {t(`news.${news}.title`)}
               </h3>
                 <div className="flex items-center text-emerald-600 group-hover:text-emerald-700 transition-colors duration-300">
-                  <span className="text-sm font-semibold">{t('newsPage.readMore')}</span>
+                  <span className="text-sm font-semibold">Read more</span>
                   <motion.div
                     whileHover={{ x: 4 }}
                     transition={{ duration: 0.2 }}

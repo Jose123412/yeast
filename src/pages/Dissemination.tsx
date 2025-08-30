@@ -35,12 +35,16 @@ const Dissemination: React.FC = () => {
   const sections = [
     {
       id: 'dissemination',
+      title: 'Dissemination',
+      description: 'Our laboratory is enriched by frequent visits from our international collaborators, who are experts in the field of yeasts. We have had the honor of welcoming Gianni Litti, Daniela Delneri, Gill Fisher, Lucía Morales, Dunkan Greig, and Rike Stelkens, among others. These visits are a valuable opportunity to conduct joint sampling in the natural habitats of the yeasts we study, and also serve as a key time to discuss scientific advancements and plan new collaborative projects.',
       photos: disseminationPhotos,
       icon: Users,
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
       id: 'whiskey',
+      title: 'Whiskey tasting',
+      description: 'In collaboration with other research laboratories in Chile, we are part of the Millennium Nucleus LiLi. During the first year of this project, we conducted an exhaustive sampling campaign along a wide latitudinal gradient, from the Ñuble Region (36°S) to Coyhaique (45°S). This fieldwork was carried out across all four seasons to assess the diversity and dispersal of yeasts inhabiting the bark of Nothofagus pumilio (Lenga) at different altitudes. The data collected have been fundamental for the development of several undergraduate and doctoral theses, as well as for the publication of scientific articles.',
       photos: whiskeyPhotos,
       icon: Wine,
       gradient: 'from-amber-500 to-orange-500'
