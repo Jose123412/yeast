@@ -133,6 +133,7 @@ const Publications: React.FC = () => {
           >
             <BookOpen size={32} className="text-white sm:w-12 sm:h-12" />
           </motion.div>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-slate-800 to-blue-800 bg-clip-text text-transparent mb-6">
             {t('publications.title')}
           </h1>
           <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
