@@ -133,6 +133,7 @@ const Publications: React.FC = () => {
           >
             <BookOpen size={32} className="text-white sm:w-12 sm:h-12" />
           </motion.div>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-slate-800 to-blue-800 bg-clip-text text-transparent mb-6">
             {t('publications.title')}
           </h1>
           <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
@@ -181,6 +182,7 @@ const Publications: React.FC = () => {
                 key={publication.id}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                 whileHover={{ y: -8, scale: 1.01 }}
                 className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group relative"
               >
@@ -190,7 +192,7 @@ const Publications: React.FC = () => {
                     onClick={() => handleDeletePublication(publication.id)}
                     className="absolute top-4 right-4 z-10 p-2 bg-red-500 text-white rounded-full opacity-0 group-hover:opacity-100 hover:bg-red-600 transition-all duration-300"
                   >
-            className="lg:hidden py-4 border-t border-gray-200"
+                    <Trash2 size={16} />
                   </button>
                 )}
 
@@ -198,7 +200,7 @@ const Publications: React.FC = () => {
                   href={publication.pdf_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 py-2 text-sm sm:text-base"
+                  className="block"
                 >
                   <div className="aspect-w-16 aspect-h-9 h-48 overflow-hidden relative">
                     {publication.image_url ? (
