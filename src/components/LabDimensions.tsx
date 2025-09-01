@@ -133,14 +133,15 @@ const Publications: React.FC = () => {
           >
             <BookOpen size={32} className="text-white sm:w-12 sm:h-12" />
           </motion.div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-4 sm:mb-6">
             {t('publications.title')}
           </h1>
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             {t('publications.subtitle')}
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 relative z-10">
         <div className="flex justify-between items-center mb-8">
           <motion.button
             initial={{ opacity: 0, x: -20 }}
@@ -159,6 +160,7 @@ const Publications: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
+            onClick={handleAdminAccess}
             className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-slate-600 to-slate-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
           >
             <Settings size={14} className="sm:w-4 sm:h-4" />
@@ -182,7 +184,7 @@ const Publications: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                 whileHover={{ y: -8, scale: 1.01 }}
-                className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl hover:shadow-2xl transition-all duration-500 group"
+                className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl hover:shadow-2xl transition-all duration-500 group relative"
               >
                 {/* Admin Delete Button */}
                 {isAdmin && (
@@ -194,27 +196,20 @@ const Publications: React.FC = () => {
                   </button>
                 )}
 
-                <a
-                  href={publication.pdf_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <div className="aspect-w-16 aspect-h-9 h-48 overflow-hidden relative">
-                    {publication.image_url ? (
-                      <img
-                        src={publication.image_url}
-                        alt={getLocalizedTitle(publication)}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center">
-                        <BookOpen size={48} className="text-blue-500" />
-                      </div>
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  </div>
-                </a>
+                <div className="aspect-w-16 aspect-h-9 h-48 overflow-hidden relative">
+                  {publication.image_url ? (
+                    <img
+                      src={publication.image_url}
+                      alt={getLocalizedTitle(publication)}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center">
+                      <BookOpen size={48} className="text-blue-500" />
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
                 
                 <div className="p-6">
                   <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
@@ -241,20 +236,19 @@ const Publications: React.FC = () => {
 
                   {publication.doi && (
                     <p className="text-xs text-gray-500 mb-4">
-                <div className="p-4 sm:p-6 lg:p-8">
+                      <strong>DOI:</strong> {publication.doi}
                     </p>
                   )}
                   
                   <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                      className={`inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br ${dimension.gradient} rounded-lg sm:rounded-xl shadow-lg`}
                     <a
-                      <Icon size={16} className="text-white sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
-                <div className="aspect-w-16 aspect-h-9 h-32 sm:h-40 lg:h-48 overflow-hidden relative">
-                    <h3 className="text-sm sm:text-base lg:text-lg font-bold text-slate-800 group-hover:text-slate-900 transition-colors duration-300">
+                      href={publication.pdf_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
                     >
                       <Download size={16} />
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                      <span>Descargar PDF</span>
                     </a>
                   </div>
                 </div>
