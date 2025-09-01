@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, Download, ExternalLink, Calendar, Users, ArrowLeft } from 'lucide-react';
+import { BookOpen, Download, ExternalLink, Calendar, Users, ArrowLeft, Plus, Settings } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import AdminLogin from '../components/AdminLogin';
+import PublicationUpload from '../components/PublicationUpload';
 
 const Publications: React.FC = () => {
   const { t } = useLanguage();
-
-  const publications = [
+  const [showAdminLogin, setShowAdminLogin] = useState(false);
+  const [showUploadForm, setShowUploadForm] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [publications, setPublications] = useState([
     {
       id: 1,
       title: 'Co-culture dynamics between Lachancea cidri and Saccharomyces cerevisiae impact fermentative aroma profile',
@@ -71,7 +75,22 @@ const Publications: React.FC = () => {
       pdfUrl: '/papers/martinez-2022-antimicrobial-compounds.pdf',
       image: 'https://images.pexels.com/photos/2280550/pexels-photo-2280550.jpeg?auto=compress&cs=tinysrgb&w=800'
     }
-  ];
+  ]);
+
+  const handleAdminLogin = () => {
+    setIsAdmin(true);
+    setShowAdminLogin(false);
+    setShowUploadForm(true);
+  };
+
+  const handleUploadSuccess = () => {
+    // Aquí recargarías las publicaciones desde la base de datos
+    console.log('Publication uploaded successfully');
+  };
+
+  const handleAdminAccess = () => {
+    setShowAdminLogin(true);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-16">
@@ -111,6 +130,24 @@ const Publications: React.FC = () => {
           <ArrowLeft size={20} />
           <span>{t('common.backToHome')}</span>
         </motion.button>
+
+        {/* Admin Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="flex justify-end mb-8"
+        >
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={handleAdminAccess}
+            className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-slate-600 to-slate-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            <Settings size={16} />
+            <span>Administrar</span>
+          </motion.button>
+        </motion.div>
 
         {/* Publications Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -176,6 +213,21 @@ const Publications: React.FC = () => {
           ))}
         </div>
       </div>
+
+      {/* Modals */}
+      {showAdminLogin && (
+        <AdminLogin
+          onLogin={handleAdminLogin}
+          onClose={() => setShowAdminLogin(false)}
+        />
+      )}
+
+      {showUploadForm && (
+        <PublicationUpload
+          onClose={() => setShowUploadForm(false)}
+          onUploadSuccess={handleUploadSuccess}
+        />
+      )}
     </div>
   );
 };
