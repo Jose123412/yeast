@@ -81,23 +81,11 @@ const Publications: React.FC = () => {
   };
 
   const getLocalizedTitle = (publication: Publication): string => {
-    switch (currentLanguage) {
-      case 'es': return publication.title_es;
-      case 'en': return publication.title_en;
-      case 'fr': return publication.title_fr;
-      case 'pt': return publication.title_pt;
-      default: return publication.title_en;
-    }
+    return publication.title || publication.title_en || publication.title_es;
   };
 
   const getLocalizedAbstract = (publication: Publication): string => {
-    switch (currentLanguage) {
-      case 'es': return publication.abstract_es;
-      case 'en': return publication.abstract_en;
-      case 'fr': return publication.abstract_fr;
-      case 'pt': return publication.abstract_pt;
-      default: return publication.abstract_en;
-    }
+    return publication.abstract || publication.abstract_en || publication.abstract_es;
   };
 
   if (isLoading) {

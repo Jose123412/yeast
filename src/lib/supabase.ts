@@ -12,6 +12,8 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 // Tipos para TypeScript
 export interface Publication {
   id: string;
+  title: string;
+  abstract: string;
   title_es: string;
   title_en: string;
   title_fr: string;
@@ -32,6 +34,8 @@ export interface Publication {
 }
 
 export interface PublicationInsert {
+  title: string;
+  abstract: string;
   title_es: string;
   title_en: string;
   title_fr: string;

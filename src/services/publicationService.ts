@@ -19,9 +19,22 @@ export class PublicationService {
 
   // Crear nueva publicación
   static async createPublication(publication: PublicationInsert): Promise<Publication> {
+    // Auto-populate multilingual fields with the main title/abstract for backward compatibility
+    const publicationData = {
+      ...publication,
+      title_es: publication.title,
+      title_en: publication.title,
+      title_fr: publication.title,
+      title_pt: publication.title,
+      abstract_es: publication.abstract,
+      abstract_en: publication.abstract,
+      abstract_fr: publication.abstract,
+      abstract_pt: publication.abstract,
+    };
+
     const { data, error } = await supabase
       .from('publications')
-      .insert([publication])
+      .insert([publicationData])
       .select()
       .single();
 

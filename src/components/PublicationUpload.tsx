@@ -12,14 +12,8 @@ interface PublicationUploadProps {
 const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUploadSuccess }) => {
   const { t } = useLanguage();
   const [formData, setFormData] = useState({
-    title_es: '',
-    title_en: '',
-    title_fr: '',
-    title_pt: '',
-    abstract_es: '',
-    abstract_en: '',
-    abstract_fr: '',
-    abstract_pt: '',
+    title: '',
+    abstract: '',
     year: new Date().getFullYear(),
     authors: '',
     journal: '',
@@ -53,7 +47,7 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
   const generateFileName = (originalName: string, type: 'pdf' | 'image'): string => {
     const timestamp = Date.now();
     const extension = originalName.split('.').pop();
-    const baseName = formData.title_en
+    const baseName = formData.title
       .toLowerCase()
       .replace(/[^a-z0-9]/g, '-')
       .replace(/-+/g, '-')
@@ -118,19 +112,19 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-2 sm:p-4"
       onClick={onClose}
     >
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
-        className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+        className="bg-white rounded-xl sm:rounded-2xl w-full max-w-2xl max-h-[95vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="p-6 border-b border-gray-200">
+        <div className="p-4 sm:p-6 border-b border-gray-200">
           <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-bold text-slate-800">Subir Nueva Publicación</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-800">Subir Nueva Publicación</h2>
             <button
               onClick={onClose}
               className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200"
@@ -140,65 +134,25 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="p-6 space-y-6">
-          {/* Títulos en diferentes idiomas */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Título (Español) *
-              </label>
-              <input
-                type="text"
-                name="title_es"
-                value={formData.title_es}
-                onChange={handleInputChange}
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Título (English) *
-              </label>
-              <input
-                type="text"
-                name="title_en"
-                value={formData.title_en}
-                onChange={handleInputChange}
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Título (Français) *
-              </label>
-              <input
-                type="text"
-                name="title_fr"
-                value={formData.title_fr}
-                onChange={handleInputChange}
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Título (Português) *
-              </label>
-              <input
-                type="text"
-                name="title_pt"
-                value={formData.title_pt}
-                onChange={handleInputChange}
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
+        <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-4 sm:space-y-6">
+          {/* Título único */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Título *
+            </label>
+            <input
+              type="text"
+              name="title"
+              value={formData.title}
+              onChange={handleInputChange}
+              required
+              placeholder="Título de la publicación"
+              className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
+            />
           </div>
 
           {/* Información básica */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Año *
@@ -211,10 +165,10 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
                 min="2000"
                 max="2030"
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
               />
             </div>
-            <div>
+            <div className="sm:col-span-1 lg:col-span-2">
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Autores *
               </label>
@@ -225,9 +179,12 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
                 onChange={handleInputChange}
                 placeholder="Ej: González, M., Silva, A."
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
               />
             </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Revista
@@ -238,93 +195,48 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
                 value={formData.journal}
                 onChange={handleInputChange}
                 placeholder="Ej: Nature Microbiology"
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                DOI (opcional)
+              </label>
+              <input
+                type="text"
+                name="doi"
+                value={formData.doi}
+                onChange={handleInputChange}
+                placeholder="10.1038/s41564-024-01234-5"
+                className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
               />
             </div>
           </div>
 
-          {/* DOI */}
+          {/* Resumen único */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              DOI (opcional)
+              Resumen *
             </label>
-            <input
-              type="text"
-              name="doi"
-              value={formData.doi}
+            <textarea
+              name="abstract"
+              value={formData.abstract}
               onChange={handleInputChange}
-              placeholder="Ej: 10.1038/s41564-024-01234-5"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              rows={4}
+              required
+              placeholder="Resumen de la publicación..."
+              className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none text-sm sm:text-base"
             />
           </div>
 
-          {/* Abstracts en diferentes idiomas */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-800">Resúmenes</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Resumen (Español) *
-                </label>
-                <textarea
-                  name="abstract_es"
-                  value={formData.abstract_es}
-                  onChange={handleInputChange}
-                  rows={4}
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Abstract (English) *
-                </label>
-                <textarea
-                  name="abstract_en"
-                  value={formData.abstract_en}
-                  onChange={handleInputChange}
-                  rows={4}
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Résumé (Français) *
-                </label>
-                <textarea
-                  name="abstract_fr"
-                  value={formData.abstract_fr}
-                  onChange={handleInputChange}
-                  rows={4}
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Resumo (Português) *
-                </label>
-                <textarea
-                  name="abstract_pt"
-                  value={formData.abstract_pt}
-                  onChange={handleInputChange}
-                  rows={4}
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                />
-              </div>
-            </div>
-          </div>
-
           {/* Archivos */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {/* PDF Upload */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Archivo PDF *
               </label>
-              <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-blue-400 transition-colors duration-200">
+              <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-6 text-center hover:border-blue-400 transition-colors duration-200">
                 <input
                   type="file"
                   accept=".pdf"
@@ -333,9 +245,9 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
                   id="pdf-upload"
                 />
                 <label htmlFor="pdf-upload" className="cursor-pointer">
-                  <FileText size={32} className="mx-auto text-gray-400 mb-2" />
-                  <p className="text-sm text-gray-600">
-                    {pdfFile ? pdfFile.name : 'Haz clic para seleccionar PDF'}
+                  <FileText size={24} className="mx-auto text-gray-400 mb-2" />
+                  <p className="text-xs sm:text-sm text-gray-600 break-words">
+                    {pdfFile ? pdfFile.name : 'Seleccionar PDF'}
                   </p>
                 </label>
               </div>
@@ -344,9 +256,9 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
             {/* Image Upload */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Imagen de portada (opcional)
+                Imagen (opcional)
               </label>
-              <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-blue-400 transition-colors duration-200">
+              <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-6 text-center hover:border-blue-400 transition-colors duration-200">
                 <input
                   type="file"
                   accept="image/*"
@@ -355,9 +267,9 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
                   id="image-upload"
                 />
                 <label htmlFor="image-upload" className="cursor-pointer">
-                  <Upload size={32} className="mx-auto text-gray-400 mb-2" />
-                  <p className="text-sm text-gray-600">
-                    {imageFile ? imageFile.name : 'Haz clic para seleccionar imagen'}
+                  <Upload size={24} className="mx-auto text-gray-400 mb-2" />
+                  <p className="text-xs sm:text-sm text-gray-600 break-words">
+                    {imageFile ? imageFile.name : 'Seleccionar imagen'}
                   </p>
                 </label>
               </div>
@@ -380,10 +292,10 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center space-x-2 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800"
+              className="flex items-center space-x-2 p-3 sm:p-4 bg-green-50 border border-green-200 rounded-lg text-green-800"
             >
               <Check size={20} />
-              <span>Publicación subida exitosamente</span>
+              <span className="text-sm sm:text-base">Publicación subida exitosamente</span>
             </motion.div>
           )}
 
@@ -391,20 +303,20 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center space-x-2 p-4 bg-red-50 border border-red-200 rounded-lg text-red-800"
+              className="flex items-center space-x-2 p-3 sm:p-4 bg-red-50 border border-red-200 rounded-lg text-red-800"
             >
               <AlertCircle size={20} />
-              <span>Error al subir la publicación. Inténtalo de nuevo.</span>
+              <span className="text-sm sm:text-base">Error al subir la publicación. Inténtalo de nuevo.</span>
             </motion.div>
           )}
 
           {/* Buttons */}
-          <div className="flex justify-end space-x-4 pt-6 border-t border-gray-200">
+          <div className="flex flex-col sm:flex-row justify-end space-y-3 sm:space-y-0 sm:space-x-4 pt-4 sm:pt-6 border-t border-gray-200">
             <button
               type="button"
               onClick={onClose}
               disabled={isUploading}
-              className="px-6 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200 disabled:opacity-50"
+              className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200 disabled:opacity-50 text-sm sm:text-base"
             >
               Cancelar
             </button>
@@ -413,7 +325,7 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
               disabled={isUploading || !pdfFile}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+              className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 text-sm sm:text-base"
             >
               {isUploading ? (
                 <>
