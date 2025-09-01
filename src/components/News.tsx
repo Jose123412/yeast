@@ -1,86 +1,290 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Calendar, ArrowRight, Newspaper } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { BookOpen, Download, Calendar, ArrowLeft, Settings, Trash2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { PublicationService } from '../services/publicationService';
+import { AuthService } from '../services/authService';
+import { Publication } from '../lib/supabase';
+import AdminLogin from '../components/AdminLogin';
+import PublicationUpload from '../components/PublicationUpload';
 
-const News: React.FC = () => {
-  const { t } = useLanguage();
+const Publications: React.FC = () => {
+  const { t, currentLanguage } = useLanguage();
+  const [showAdminLogin, setShowAdminLogin] = useState(false);
+  const [showUploadForm, setShowUploadForm] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [publications, setPublications] = useState<Publication[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const newsItems = ['1', '2', '3'];
+  // Cargar publicaciones al montar el componente
+  useEffect(() => {
+    loadPublications();
+    checkAdminStatus();
+  }, []);
+
+  const loadPublications = async () => {
+    try {
+      setIsLoading(true);
+      const data = await PublicationService.getPublications();
+      setPublications(data);
+      setError(null);
+    } catch (error) {
+      console.error('Error loading publications:', error);
+      setError('Error al cargar las publicaciones');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const checkAdminStatus = async () => {
+    try {
+      const isAuthorized = await AuthService.isAuthorizedUser();
+      setIsAdmin(isAuthorized);
+    } catch (error) {
+      setIsAdmin(false);
+    }
+  };
+
+  const handleAdminLogin = () => {
+    setIsAdmin(true);
+    setShowAdminLogin(false);
+    setShowUploadForm(true);
+  };
+
+  const handleUploadSuccess = () => {
+    loadPublications(); // Recargar publicaciones
+    setShowUploadForm(false);
+  };
+
+  const handleAdminAccess = () => {
+    if (isAdmin) {
+      setShowUploadForm(true);
+    } else {
+      setShowAdminLogin(true);
+    }
+  };
+
+  const handleDeletePublication = async (id: string) => {
+    if (!isAdmin) return;
+    
+    const confirmed = window.confirm('¿Estás seguro de que quieres eliminar esta publicación?');
+    if (!confirmed) return;
+
+    try {
+      await PublicationService.deletePublication(id);
+      await loadPublications(); // Recargar lista
+    } catch (error) {
+      console.error('Error deleting publication:', error);
+      alert('Error al eliminar la publicación');
+    }
+  };
+
+  const getLocalizedTitle = (publication: Publication): string => {
+    return publication.title || publication.title_en || publication.title_es;
+  };
+
+  const getLocalizedAbstract = (publication: Publication): string => {
+    return publication.abstract || publication.abstract_en || publication.abstract_es;
+  };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-16 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Cargando publicaciones...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-16 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-red-600 mb-4">{error}</p>
+          <button
+            onClick={loadPublications}
+            className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200"
+          >
+            Reintentar
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <section id="news" className="py-20 bg-gradient-to-b from-slate-100 to-white relative">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='m0 40l40-40h-40v40zm40 0v-40h-40l40 40z'/%3E%3C/g%3E%3C/svg%3E")`,
-        }}></div>
-      </div>
-      
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-16">
+      <div className="container mx-auto px-3 sm:px-4 lg:px-8 py-8 sm:py-16">
+        {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16 relative z-10"
+          className="text-center mb-8 sm:mb-16"
         >
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
+            animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="inline-block p-3 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl mb-6"
+            className="inline-block p-3 sm:p-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl sm:rounded-3xl mb-6 sm:mb-8"
           >
-            <Newspaper size={32} className="text-white" />
+            <BookOpen size={32} className="text-white sm:w-12 sm:h-12" />
           </motion.div>
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-slate-800 to-emerald-800 bg-clip-text text-transparent mb-4">
-            {t('news.title')}
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full"></div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-slate-800 to-blue-800 bg-clip-text text-transparent mb-6">
+            {t('publications.title')}
+          </h1>
+          <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
+            {t('publications.subtitle')}
+          </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
-          {newsItems.map((news, index) => (
-            <motion.div
-              key={news}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -8, scale: 1.02 }}
-              onClick={() => window.location.href = '/news'}
-              className="bg-white border border-gray-200/50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer group relative overflow-hidden"
-            >
-              {/* Gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 to-teal-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <div className="relative z-10">
-              <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
-                  <div className="p-1 bg-emerald-100 rounded-lg">
-                    <Calendar size={14} className="text-emerald-600" />
-                  </div>
-                <span>{t(`news.${news}.date`)}</span>
-              </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-6 group-hover:text-emerald-700 transition-colors duration-300 leading-tight">
-                {t(`news.${news}.title`)}
-              </h3>
-                <div className="flex items-center text-emerald-600 group-hover:text-emerald-700 transition-colors duration-300">
-                  <span className="text-sm font-semibold">Read more</span>
-                  <motion.div
-                    whileHover={{ x: 4 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <ArrowRight size={16} className="ml-2" />
-                  </motion.div>
-              </div>
-              </div>
-            </motion.div>
-          ))}
+        {/* Back Button and Admin Button */}
+        <div className="flex justify-between items-center mb-8">
+          <motion.button
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            onClick={() => window.location.href = '/'}
+            className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
+          >
+            <ArrowLeft size={20} />
+            <span>{t('common.backToHome')}</span>
+          </motion.button>
+
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            onClick={handleAdminAccess}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-slate-600 to-slate-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
+          >
+            <Settings size={14} className="sm:w-4 sm:h-4" />
+            <span>{isAdmin ? 'Subir Publicación' : 'Administrar'}</span>
+          </motion.button>
         </div>
+
+        {/* Publications Grid */}
+        {publications.length === 0 ? (
+          <div className="text-center py-16">
+            <BookOpen size={64} className="mx-auto text-gray-400 mb-4" />
+            <h3 className="text-xl font-semibold text-gray-600 mb-2">No hay publicaciones disponibles</h3>
+            <p className="text-gray-500">Las publicaciones aparecerán aquí una vez que sean subidas.</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {publications.map((publication, index) => (
+              <motion.article
+                key={publication.id}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                whileHover={{ y: -8, scale: 1.01 }}
+                className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group relative"
+              >
+                {/* Admin Delete Button */}
+                {isAdmin && (
+                  <button
+                    onClick={() => handleDeletePublication(publication.id)}
+                    className="absolute top-4 right-4 z-10 p-2 bg-red-500 text-white rounded-full opacity-0 group-hover:opacity-100 hover:bg-red-600 transition-all duration-300"
+                  >
+                    <Trash2 size={16} />
+                  </button>
+                )}
+
+                <a
+                  href={publication.pdf_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <div className="aspect-w-16 aspect-h-9 h-48 overflow-hidden relative">
+                    {publication.image_url ? (
+                      <img
+                        src={publication.image_url}
+                        alt={getLocalizedTitle(publication)}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center">
+                        <BookOpen size={48} className="text-blue-500" />
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  </div>
+                </a>
+                
+                <div className="p-6">
+                  <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
+                    <div className="flex items-center space-x-2">
+                      <Calendar size={14} />
+                      <span>{publication.year}</span>
+                    </div>
+                    {publication.journal && (
+                      <span className="text-blue-600 font-medium">{publication.journal}</span>
+                    )}
+                  </div>
+                  
+                  <h2 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-blue-700 transition-colors duration-300 line-clamp-2">
+                    {getLocalizedTitle(publication)}
+                  </h2>
+                  
+                  <p className="text-sm text-gray-600 mb-3">
+                    <strong>Autores:</strong> {publication.authors}
+                  </p>
+                  
+                  <p className="text-gray-600 mb-4 line-clamp-3 text-sm">
+                    {getLocalizedAbstract(publication)}
+                  </p>
+
+                  {publication.doi && (
+                    <p className="text-xs text-gray-500 mb-4">
+                      <strong>DOI:</strong> {publication.doi}
+                    </p>
+                  )}
+                  
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <div></div>
+                    <a
+                      href={publication.pdf_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
+                    >
+                      <Download size={16} />
+                      <span>{t('publications.downloadPdf')}</span>
+                    </a>
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        )}
       </div>
-    </section>
+
+      {/* Modals */}
+      <AnimatePresence>
+        {showAdminLogin && (
+          <AdminLogin
+            onLogin={handleAdminLogin}
+            onClose={() => setShowAdminLogin(false)}
+          />
+        )}
+
+        {showUploadForm && (
+          <PublicationUpload
+            onClose={() => setShowUploadForm(false)}
+            onUploadSuccess={handleUploadSuccess}
+          />
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 
-export default News;
+export default Publications;

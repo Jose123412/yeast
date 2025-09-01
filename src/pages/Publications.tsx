@@ -117,23 +117,22 @@ const Publications: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="container mx-auto px-3 sm:px-4 lg:px-8 py-8 sm:py-16">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-16"
         >
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="inline-block p-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl mb-8"
+            className="inline-block p-3 sm:p-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl sm:rounded-3xl mb-6 sm:mb-8"
           >
-            <BookOpen size={48} className="text-white" />
+            <BookOpen size={32} className="text-white sm:w-12 sm:h-12" />
           </motion.div>
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-slate-800 to-blue-800 bg-clip-text text-transparent mb-6">
             {t('publications.title')}
           </h1>
           <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
@@ -161,10 +160,9 @@ const Publications: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            onClick={handleAdminAccess}
-            className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-slate-600 to-slate-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+            className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-slate-600 to-slate-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
           >
-            <Settings size={16} />
+            <Settings size={14} className="sm:w-4 sm:h-4" />
             <span>{isAdmin ? 'Subir Publicación' : 'Administrar'}</span>
           </motion.button>
         </div>
