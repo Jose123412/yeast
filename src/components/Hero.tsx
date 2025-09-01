@@ -133,6 +133,7 @@ const Publications: React.FC = () => {
           >
             <BookOpen size={32} className="text-white sm:w-12 sm:h-12" />
           </motion.div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
             {t('publications.title')}
           </h1>
           <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
@@ -154,10 +155,11 @@ const Publications: React.FC = () => {
             <span>{t('common.backToHome')}</span>
           </motion.button>
 
+          <motion.button
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-2"
+            onClick={handleAdminAccess}
             whileTap={{ scale: 0.98 }}
             className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-slate-600 to-slate-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
           >
@@ -168,7 +170,7 @@ const Publications: React.FC = () => {
 
         {/* Publications Grid */}
         {publications.length === 0 ? (
-            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-2"
+          <div className="text-center py-16">
             <BookOpen size={64} className="mx-auto text-gray-400 mb-4" />
             <h3 className="text-xl font-semibold text-gray-600 mb-2">No hay publicaciones disponibles</h3>
             <p className="text-gray-500">Las publicaciones aparecerán aquí una vez que sean subidas.</p>
@@ -248,7 +250,7 @@ const Publications: React.FC = () => {
                   <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                     <div></div>
                     <a
-              className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-sm sm:text-base lg:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 w-full sm:w-auto"
+                      href={publication.pdf_url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
@@ -256,7 +258,7 @@ const Publications: React.FC = () => {
                       <Download size={16} />
                       <span>{t('publications.downloadPdf')}</span>
                     </a>
-              className="border-2 border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-sm sm:text-base lg:text-lg backdrop-blur-sm hover:bg-white/10 transition-all duration-300 w-full sm:w-auto"
+                  </div>
                 </div>
               </motion.article>
             ))}
