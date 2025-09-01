@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Upload, FileText, X, Check, AlertCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { PublicationService } from '../services/publicationService';
 
 interface PublicationUploadProps {
   onClose: () => void;
@@ -28,6 +29,7 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   const [uploadStatus, setUploadStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [uploadProgress, setUploadProgress] = useState(0);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -48,6 +50,18 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
     }
   };
 
+  const generateFileName = (originalName: string, type: 'pdf' | 'image'): string => {
+    const timestamp = Date.now();
+    const extension = originalName.split('.').pop();
+    const baseName = formData.title_en
+      .toLowerCase()
+      .replace(/[^a-z0-9]/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '');
+    
+    return `${baseName}-${timestamp}.${extension}`;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!pdfFile) {
@@ -57,13 +71,35 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
 
     setIsUploading(true);
     setUploadStatus('idle');
+    setUploadProgress(0);
 
     try {
-      // Aquí implementarías la lógica de subida a Supabase
-      // Por ahora simulamos la subida
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Subir PDF
+      setUploadProgress(25);
+      const pdfFileName = generateFileName(pdfFile.name, 'pdf');
+      const pdfUrl = await PublicationService.uploadPDF(pdfFile, pdfFileName);
+
+      // Subir imagen si existe
+      setUploadProgress(50);
+      let imageUrl = '';
+      if (imageFile) {
+        const imageFileName = generateFileName(imageFile.name, 'image');
+        imageUrl = await PublicationService.uploadImage(imageFile, imageFileName);
+      }
+
+      // Crear publicación en la base de datos
+      setUploadProgress(75);
+      const publicationData = {
+        ...formData,
+        pdf_url: pdfUrl,
+        image_url: imageUrl || undefined
+      };
+
+      await PublicationService.createPublication(publicationData);
       
+      setUploadProgress(100);
       setUploadStatus('success');
+      
       setTimeout(() => {
         onUploadSuccess();
         onClose();
@@ -73,6 +109,7 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
       setUploadStatus('error');
     } finally {
       setIsUploading(false);
+      setUploadProgress(0);
     }
   };
 
@@ -108,7 +145,7 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Título (Español)
+                Título (Español) *
               </label>
               <input
                 type="text"
@@ -121,7 +158,7 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Título (English)
+                Título (English) *
               </label>
               <input
                 type="text"
@@ -134,7 +171,7 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Título (Français)
+                Título (Français) *
               </label>
               <input
                 type="text"
@@ -147,7 +184,7 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Título (Português)
+                Título (Português) *
               </label>
               <input
                 type="text"
@@ -164,7 +201,7 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Año
+                Año *
               </label>
               <input
                 type="number"
@@ -179,7 +216,7 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Autores
+                Autores *
               </label>
               <input
                 type="text"
@@ -227,7 +264,7 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Resumen (Español)
+                  Resumen (Español) *
                 </label>
                 <textarea
                   name="abstract_es"
@@ -240,7 +277,7 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Abstract (English)
+                  Abstract (English) *
                 </label>
                 <textarea
                   name="abstract_en"
@@ -253,7 +290,7 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Résumé (Français)
+                  Résumé (Français) *
                 </label>
                 <textarea
                   name="abstract_fr"
@@ -266,7 +303,7 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Resumo (Português)
+                  Resumo (Português) *
                 </label>
                 <textarea
                   name="abstract_pt"
@@ -327,6 +364,17 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
             </div>
           </div>
 
+          {/* Progress Bar */}
+          {isUploading && (
+            <div className="w-full bg-gray-200 rounded-full h-2">
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: `${uploadProgress}%` }}
+                className="bg-gradient-to-r from-blue-500 to-cyan-500 h-2 rounded-full"
+              />
+            </div>
+          )}
+
           {/* Status Messages */}
           {uploadStatus === 'success' && (
             <motion.div
@@ -370,7 +418,7 @@ const PublicationUpload: React.FC<PublicationUploadProps> = ({ onClose, onUpload
               {isUploading ? (
                 <>
                   <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                  <span>Subiendo...</span>
+                  <span>Subiendo... {uploadProgress}%</span>
                 </>
               ) : (
                 <>

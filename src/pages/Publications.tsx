@@ -1,81 +1,50 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { BookOpen, Download, ExternalLink, Calendar, Users, ArrowLeft, Plus, Settings } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { BookOpen, Download, Calendar, ArrowLeft, Settings, Trash2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { PublicationService } from '../services/publicationService';
+import { AuthService } from '../services/authService';
+import { Publication } from '../lib/supabase';
 import AdminLogin from '../components/AdminLogin';
 import PublicationUpload from '../components/PublicationUpload';
 
 const Publications: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
   const [showAdminLogin, setShowAdminLogin] = useState(false);
   const [showUploadForm, setShowUploadForm] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [publications, setPublications] = useState([
-    {
-      id: 1,
-      title: 'Co-culture dynamics between Lachancea cidri and Saccharomyces cerevisiae impact fermentative aroma profile',
-      year: 2025,
-      abstract: 'This study presents the first comprehensive genomic analysis of native yeast populations inhabiting the bark of Nothofagus trees in Chilean Patagonia. We identified 47 novel species with unique metabolic capabilities.',
-      pdfUrl: '/papers/gonzalez-2024-genomic-diversity.pdf',
-      image: 'https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    {
-      id: 2,
-      title: 'Biotechnological Applications of Patagonian Yeasts in Craft Beer Production',
-      year: 2024,
-      abstract: 'We developed novel hybrid yeast strains from Patagonian isolates that significantly enhance the aromatic profile and fermentation efficiency in craft beer production.',
-      pdfUrl: '/papers/fernandez-2024-beer-production.pdf',
-      image: 'https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    {
-      id: 3,
-      title: 'Experimental Evolution of Cold-Adapted Yeasts for Whisky Fermentation',
-      year: 2023,
-      abstract: 'Through directed evolution, we created specialized yeast strains adapted to low-temperature fermentation conditions, improving whisky production in Patagonian climates.',
-      pdfUrl: '/papers/ramirez-2023-whisky-fermentation.pdf',
-      image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    {
-      id: 4,
-      title: 'Metabolic Characterization of Nothofagus-Associated Yeast Communities',
-      year: 2023,
-      abstract: 'Comprehensive metabolic profiling revealed unique enzymatic pathways in Nothofagus bark yeasts, with potential applications in sustainable biotechnology.',
-      pdfUrl: '/papers/silva-2023-metabolic-characterization.pdf',
-      image: 'https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    {
-      id: 5,
-      title: 'Phylogenetic Analysis of Endemic Yeasts in Temperate Rainforests',
-      year: 2023,
-      abstract: 'Phylogenetic reconstruction revealed the evolutionary history of Patagonian yeasts, identifying key adaptive mutations for bark colonization.',
-      pdfUrl: '/papers/mendoza-2023-phylogenetic-analysis.pdf',
-      image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    {
-      id: 6,
-      title: 'Sustainable Fermentation Technologies Using Native Patagonian Microorganisms',
-      year: 2022,
-      abstract: 'Development of sustainable fermentation processes using native yeasts for biofuel production, contributing to circular economy principles.',
-      pdfUrl: '/papers/gonzalez-2022-sustainable-fermentation.pdf',
-      image: 'https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    {
-      id: 7,
-      title: 'Genomic Adaptation Mechanisms in Extreme Cold Environments',
-      year: 2022,
-      abstract: 'Investigation of genomic adaptations that allow yeasts to survive and thrive in the harsh conditions of Patagonian winters.',
-      pdfUrl: '/papers/fernandez-2022-cold-adaptation.pdf',
-      image: 'https://images.pexels.com/photos/3735748/pexels-photo-3735748.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    {
-      id: 8,
-      title: 'Bioprospecting of Antimicrobial Compounds from Patagonian Yeasts',
-      year: 2022,
-      abstract: 'Discovery of novel antimicrobial compounds produced by native yeasts, with potential pharmaceutical applications.',
-      pdfUrl: '/papers/martinez-2022-antimicrobial-compounds.pdf',
-      image: 'https://images.pexels.com/photos/2280550/pexels-photo-2280550.jpeg?auto=compress&cs=tinysrgb&w=800'
+  const [publications, setPublications] = useState<Publication[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  // Cargar publicaciones al montar el componente
+  useEffect(() => {
+    loadPublications();
+    checkAdminStatus();
+  }, []);
+
+  const loadPublications = async () => {
+    try {
+      setIsLoading(true);
+      const data = await PublicationService.getPublications();
+      setPublications(data);
+      setError(null);
+    } catch (error) {
+      console.error('Error loading publications:', error);
+      setError('Error al cargar las publicaciones');
+    } finally {
+      setIsLoading(false);
     }
-  ]);
+  };
+
+  const checkAdminStatus = async () => {
+    try {
+      const isAuthorized = await AuthService.isAuthorizedUser();
+      setIsAdmin(isAuthorized);
+    } catch (error) {
+      setIsAdmin(false);
+    }
+  };
 
   const handleAdminLogin = () => {
     setIsAdmin(true);
@@ -84,13 +53,79 @@ const Publications: React.FC = () => {
   };
 
   const handleUploadSuccess = () => {
-    // Aquí recargarías las publicaciones desde la base de datos
-    console.log('Publication uploaded successfully');
+    loadPublications(); // Recargar publicaciones
+    setShowUploadForm(false);
   };
 
   const handleAdminAccess = () => {
-    setShowAdminLogin(true);
+    if (isAdmin) {
+      setShowUploadForm(true);
+    } else {
+      setShowAdminLogin(true);
+    }
   };
+
+  const handleDeletePublication = async (id: string) => {
+    if (!isAdmin) return;
+    
+    const confirmed = window.confirm('¿Estás seguro de que quieres eliminar esta publicación?');
+    if (!confirmed) return;
+
+    try {
+      await PublicationService.deletePublication(id);
+      await loadPublications(); // Recargar lista
+    } catch (error) {
+      console.error('Error deleting publication:', error);
+      alert('Error al eliminar la publicación');
+    }
+  };
+
+  const getLocalizedTitle = (publication: Publication): string => {
+    switch (currentLanguage) {
+      case 'es': return publication.title_es;
+      case 'en': return publication.title_en;
+      case 'fr': return publication.title_fr;
+      case 'pt': return publication.title_pt;
+      default: return publication.title_en;
+    }
+  };
+
+  const getLocalizedAbstract = (publication: Publication): string => {
+    switch (currentLanguage) {
+      case 'es': return publication.abstract_es;
+      case 'en': return publication.abstract_en;
+      case 'fr': return publication.abstract_fr;
+      case 'pt': return publication.abstract_pt;
+      default: return publication.abstract_en;
+    }
+  };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-16 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Cargando publicaciones...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-16 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-red-600 mb-4">{error}</p>
+          <button
+            onClick={loadPublications}
+            className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200"
+          >
+            Reintentar
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-16">
@@ -119,115 +154,147 @@ const Publications: React.FC = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"></div>
         </motion.div>
 
-        {/* Back Button */}
-        <motion.button
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          onClick={() => window.location.href = '/'}
-          className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium mb-8 transition-colors duration-200"
-        >
-          <ArrowLeft size={20} />
-          <span>{t('common.backToHome')}</span>
-        </motion.button>
-
-        {/* Admin Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex justify-end mb-8"
-        >
+        {/* Back Button and Admin Button */}
+        <div className="flex justify-between items-center mb-8">
           <motion.button
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            onClick={() => window.location.href = '/'}
+            className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
+          >
+            <ArrowLeft size={20} />
+            <span>{t('common.backToHome')}</span>
+          </motion.button>
+
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={handleAdminAccess}
             className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-slate-600 to-slate-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
           >
             <Settings size={16} />
-            <span>Administrar</span>
+            <span>{isAdmin ? 'Subir Publicación' : 'Administrar'}</span>
           </motion.button>
-        </motion.div>
+        </div>
 
         {/* Publications Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {publications.map((publication, index) => (
-            <motion.article
-              key={publication.id}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-              whileHover={{ y: -8, scale: 1.01 }}
-              className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group"
-            >
-              <a
-                href={publication.pdfUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
+        {publications.length === 0 ? (
+          <div className="text-center py-16">
+            <BookOpen size={64} className="mx-auto text-gray-400 mb-4" />
+            <h3 className="text-xl font-semibold text-gray-600 mb-2">No hay publicaciones disponibles</h3>
+            <p className="text-gray-500">Las publicaciones aparecerán aquí una vez que sean subidas.</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {publications.map((publication, index) => (
+              <motion.article
+                key={publication.id}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                whileHover={{ y: -8, scale: 1.01 }}
+                className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group relative"
               >
-                <div className="aspect-w-16 aspect-h-9 h-48 overflow-hidden relative">
-                  <img
-                    src={publication.image}
-                    alt={publication.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                </div>
-              </a>
-              
-              <div className="p-6">
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
-                  <div className="flex items-center space-x-2">
-                    <Calendar size={14} />
-                    <span>{publication.year}</span>
+                {/* Admin Delete Button */}
+                {isAdmin && (
+                  <button
+                    onClick={() => handleDeletePublication(publication.id)}
+                    className="absolute top-4 right-4 z-10 p-2 bg-red-500 text-white rounded-full opacity-0 group-hover:opacity-100 hover:bg-red-600 transition-all duration-300"
+                  >
+                    <Trash2 size={16} />
+                  </button>
+                )}
+
+                <a
+                  href={publication.pdf_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <div className="aspect-w-16 aspect-h-9 h-48 overflow-hidden relative">
+                    {publication.image_url ? (
+                      <img
+                        src={publication.image_url}
+                        alt={getLocalizedTitle(publication)}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center">
+                        <BookOpen size={48} className="text-blue-500" />
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  </div>
+                </a>
+                
+                <div className="p-6">
+                  <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
+                    <div className="flex items-center space-x-2">
+                      <Calendar size={14} />
+                      <span>{publication.year}</span>
+                    </div>
+                    {publication.journal && (
+                      <span className="text-blue-600 font-medium">{publication.journal}</span>
+                    )}
+                  </div>
+                  
+                  <h2 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-blue-700 transition-colors duration-300 line-clamp-2">
+                    {getLocalizedTitle(publication)}
+                  </h2>
+                  
+                  <p className="text-sm text-gray-600 mb-3">
+                    <strong>Autores:</strong> {publication.authors}
+                  </p>
+                  
+                  <p className="text-gray-600 mb-4 line-clamp-3 text-sm">
+                    {getLocalizedAbstract(publication)}
+                  </p>
+
+                  {publication.doi && (
+                    <p className="text-xs text-gray-500 mb-4">
+                      <strong>DOI:</strong> {publication.doi}
+                    </p>
+                  )}
+                  
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <div></div>
+                    <a
+                      href={publication.pdf_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
+                    >
+                      <Download size={16} />
+                      <span>{t('publications.downloadPdf')}</span>
+                    </a>
                   </div>
                 </div>
-                
-                <h2 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-blue-700 transition-colors duration-300 line-clamp-2">
-                  {publication.title}
-                </h2>
-                
-                <p className="text-sm text-gray-600 mb-3">
-                  <strong>{publication.year}</strong>
-                </p>
-                
-                <p className="text-gray-600 mb-4 line-clamp-3 text-sm">
-                  {publication.abstract}
-                </p>
-                
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                  <div></div>
-                  <a
-                    href={publication.pdfUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
-                  >
-                      {t('publications.downloadPdf')}
-                    <span>Download PDF</span>
-                  </a>
-                </div>
-              </div>
-            </motion.article>
-          ))}
-        </div>
+              </motion.article>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Modals */}
-      {showAdminLogin && (
-        <AdminLogin
-          onLogin={handleAdminLogin}
-          onClose={() => setShowAdminLogin(false)}
-        />
-      )}
+      <AnimatePresence>
+        {showAdminLogin && (
+          <AdminLogin
+            onLogin={handleAdminLogin}
+            onClose={() => setShowAdminLogin(false)}
+          />
+        )}
 
-      {showUploadForm && (
-        <PublicationUpload
-          onClose={() => setShowUploadForm(false)}
-          onUploadSuccess={handleUploadSuccess}
-        />
-      )}
+        {showUploadForm && (
+          <PublicationUpload
+            onClose={() => setShowUploadForm(false)}
+            onUploadSuccess={handleUploadSuccess}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };

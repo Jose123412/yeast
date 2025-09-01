@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Lock, Mail, Eye, EyeOff, AlertCircle } from 'lucide-react';
+import { AuthService } from '../services/authService';
 
 interface AdminLoginProps {
   onLogin: () => void;
@@ -14,9 +15,6 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onLogin, onClose }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // Email autorizado para subir publicaciones
-  const AUTHORIZED_EMAIL = 'admin@moleculargeneticslab.cl';
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
@@ -24,22 +22,33 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onLogin, onClose }) => {
 
     try {
       // Verificar email autorizado
-      if (email !== AUTHORIZED_EMAIL) {
+      if (email !== 'admin@moleculargeneticslab.cl') {
         throw new Error('Email no autorizado para subir publicaciones');
       }
 
-      // Aquí implementarías la autenticación con Supabase
-      // Por ahora simulamos la autenticación
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Intentar iniciar sesión
+      await AuthService.signIn(email, password);
       
-      // Simular verificación de credenciales
-      if (password === 'admin123') { // En producción esto sería más seguro
-        onLogin();
-      } else {
-        throw new Error('Credenciales incorrectas');
+      // Verificar autorización
+      const isAuthorized = await AuthService.isAuthorizedUser();
+      if (!isAuthorized) {
+        throw new Error('Usuario no autorizado');
       }
-    } catch (error) {
-      setError(error instanceof Error ? error.message : 'Error de autenticación');
+
+      onLogin();
+    } catch (error: any) {
+      // Si el usuario no existe, intentar crearlo
+      if (error.message?.includes('Invalid login credentials') || error.message?.includes('Email not confirmed')) {
+        try {
+          await AuthService.signUpAuthorizedUser(email, password);
+          await AuthService.signIn(email, password);
+          onLogin();
+        } catch (signUpError: any) {
+          setError(signUpError.message || 'Error de autenticación');
+        }
+      } else {
+        setError(error.message || 'Error de autenticación');
+      }
     } finally {
       setIsLoading(false);
     }
