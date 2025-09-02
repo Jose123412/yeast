@@ -37,15 +37,8 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onLogin, onClose }) => {
 
       onLogin();
     } catch (error: any) {
-      // Si el usuario no existe, intentar crearlo
-      if (error.message?.includes('Invalid login credentials') || error.message?.includes('Email not confirmed')) {
-        try {
-          await AuthService.signUpAuthorizedUser(email, password);
-          await AuthService.signIn(email, password);
-          onLogin();
-        } catch (signUpError: any) {
-          setError(signUpError.message || 'Error de autenticación');
-        }
+      if (error.message?.includes('Invalid login credentials')) {
+        setError('Credenciales incorrectas. El usuario administrador debe estar registrado en Supabase.');
       } else {
         setError(error.message || 'Error de autenticación');
       }
